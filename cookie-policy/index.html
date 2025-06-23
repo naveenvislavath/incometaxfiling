@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - TaxPro</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0a2463', secondary: '#44aa99' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #44aa99;
+            box-shadow: 0 0 0 3px rgba(68, 170, 153, 0.2);
+        }
+
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #44aa99;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #44aa99;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #44aa99;
+            border-color: #44aa99;
+        }
+
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-radio {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            outline: none;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .custom-radio:checked {
+            border-color: #44aa99;
+        }
+
+        .custom-radio:checked::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #44aa99;
+        }
+
+        .table-row:nth-child(odd) {
+            background-color: #f9fafb;
+        }
+
+        .table-row:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                    data-readdy="true" class="flex items-center space-x-2">
+                    <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                        alt="GrowthLink Tax Filings" class="h-12">
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true"
+                        class="hidden lg:inline-block bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Back
+                        to Home</a>
+                    <button id="mobile-menu-button"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full left-0 z-50">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Home</a>
+                    <a href="#"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Services</a>
+                    <a href="#" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">About</a>
+                    <a href="#"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Back to Original Page Button -->
+    <div class="container mx-auto px-4 py-6">
+        <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+            data-readdy="true" class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+            <i class="ri-arrow-left-line mr-2"></i> Back to Original Page
+        </a>
+    </div>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8 mb-12">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">Cookie Policy</h1>
+                <p class="text-gray-600 mb-2">Last Updated: June 23, 2025</p>
+                <div class="h-1 w-20 bg-secondary rounded"></div>
+            </div>
+            <div class="prose max-w-none text-gray-700">
+                <p class="mb-6">
+                    This Cookie Policy explains how TaxPro ("we", "us", or "our") uses cookies and similar technologies
+                    to recognize you when you visit our website. It explains what these technologies are and why we use
+                    them, as well as your rights to control our use of them.
+                </p>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">What Are Cookies?</h2>
+                <p class="mb-6">
+                    Cookies are small data files that are placed on your computer or mobile device when you visit a
+                    website. Cookies are widely used by website owners in order to make their websites work, or to work
+                    more efficiently, as well as to provide reporting information.
+                </p>
+                <p class="mb-6">
+                    Cookies set by the website owner (in this case, TaxPro) are called "first-party cookies". Cookies
+                    set by parties other than the website owner are called "third-party cookies". Third-party cookies
+                    enable third-party features or functionality to be provided on or through the website (e.g.,
+                    advertising, interactive content and analytics). The parties that set these third-party cookies can
+                    recognize your computer both when it visits the website in question and also when it visits certain
+                    other websites.
+                </p>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Types of Cookies We Use</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4">
+                                <i class="ri-shield-check-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-800">Essential Cookies</h3>
+                                <p class="text-gray-600">Required for basic website functionality and security</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            These cookies are necessary for the website to function properly. They enable core
+                            functionality such as security, network management, and account access. You may disable
+                            these by changing your browser settings, but this may affect how the website functions.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4">
+                                <i class="ri-line-chart-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-800">Analytics Cookies</h3>
+                                <p class="text-gray-600">Help us improve our website by collecting usage information</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            These cookies allow us to count visits and traffic sources so we can measure and improve the
+                            performance of our site. They help us to know which pages are the most and least popular and
+                            see how visitors move around the site.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4">
+                                <i class="ri-advertisement-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-800">Marketing Cookies</h3>
+                                <p class="text-gray-600">Track your online activity to help advertisers deliver relevant
+                                    ads</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            These cookies may be set through our site by our advertising partners. They may be used by
+                            those companies to build a profile of your interests and show you relevant advertisements on
+                            other sites.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4">
+                                <i class="ri-settings-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-800">Preference Cookies</h3>
+                                <p class="text-gray-600">Remember your settings and preferences for a better experience
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            These cookies enable the website to provide enhanced functionality and personalization. They
+                            may be set by us or by third-party providers whose services we have added to our pages.
+                        </p>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Cookie Categories Table</h2>
+                <div class="overflow-x-auto mb-8 border border-gray-200 rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Cookie Name</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Purpose</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Duration</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Type</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">PHPSESSID</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Preserves user session state across page
+                                    requests</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Session</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Essential</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">_csrf</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Helps prevent Cross-Site Request Forgery
+                                    attacks</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Session</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Essential</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">_ga</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Registers a unique ID used to generate
+                                    statistical data</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">2 years</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Analytics</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">_gid</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Registers a unique ID used to generate
+                                    statistical data</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">24 hours</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Analytics</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">_fbp</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Used by Facebook to deliver advertisements
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-600">3 months</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Marketing</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">user_preferences</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Stores user preferences for site
+                                    functionality</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">1 year</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Preference</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">language</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Stores language preference</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">1 year</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Preference</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">_gat</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Used to throttle request rate</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">1 minute</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Analytics</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">How We Use Cookies</h2>
+                <p class="mb-4">
+                    We use cookies for several reasons. Some cookies are required for technical reasons in order for our
+                    website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other
+                    cookies also enable us to track and target the interests of our users to enhance the experience on
+                    our website. Third parties serve cookies through our website for advertising, analytics and other
+                    purposes.
+                </p>
+                <p class="mb-6">
+                    The specific types of first and third-party cookies served through our website and the purposes they
+                    perform are described below:
+                </p>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Essential Website Cookies</h3>
+                    <p class="mb-4">
+                        These cookies are strictly necessary to provide you with services available through our website
+                        and to use some of its features, such as access to secure areas. Because these cookies are
+                        strictly necessary to deliver the website, you cannot refuse them without impacting how our
+                        website functions.
+                    </p>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Performance and Functionality Cookies</h3>
+                    <p class="mb-4">
+                        These cookies are used to enhance the performance and functionality of our website but are
+                        non-essential to their use. However, without these cookies, certain functionality may become
+                        unavailable.
+                    </p>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Analytics and Customization Cookies</h3>
+                    <p class="mb-4">
+                        These cookies collect information that is used either in aggregate form to help us understand
+                        how our website is being used or how effective our marketing campaigns are, or to help us
+                        customize our website for you in order to enhance your experience.
+                    </p>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Advertising Cookies</h3>
+                    <p class="mb-4">
+                        These cookies are used to make advertising messages more relevant to you and your interests.
+                        They also perform functions like preventing the same ad from continuously reappearing, ensuring
+                        that ads are properly displayed, and in some cases selecting advertisements that are based on
+                        your interests.
+                    </p>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Third-Party Cookies</h3>
+                    <p class="mb-4">
+                        In addition to our own cookies, we may also use various third-party cookies to report usage
+                        statistics of the website, deliver advertisements on and through the website, and so on.
+                    </p>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Managing Your Cookie Preferences</h2>
+                <p class="mb-6">
+                    Most web browsers allow some control of most cookies through the browser settings. To find out more
+                    about cookies, including how to see what cookies have been set, visit <a
+                        href="https://www.allaboutcookies.org"
+                        class="text-primary hover:text-secondary underline">www.allaboutcookies.org</a>.
+                </p>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">How to Manage Cookies in Different Browsers</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Google Chrome</h4>
+                            <p class="text-sm text-gray-600">
+                                To manage cookies in Chrome, go to Settings > Privacy and security > Cookies and other
+                                site data. Here you can choose to block third-party cookies or clear all cookies when
+                                you close your browser.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Mozilla Firefox</h4>
+                            <p class="text-sm text-gray-600">
+                                To manage cookies in Firefox, go to Options > Privacy & Security. You can set Firefox to
+                                use custom settings for history and choose to accept or decline cookies from websites.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Safari</h4>
+                            <p class="text-sm text-gray-600">
+                                To manage cookies in Safari, go to Preferences > Privacy. You can choose to block all
+                                cookies, only allow cookies from websites you visit, or always allow cookies.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Microsoft Edge</h4>
+                            <p class="text-sm text-gray-600">
+                                To manage cookies in Edge, go to Settings > Cookies and site permissions > Manage and
+                                delete cookies and site data. You can choose to block third-party cookies or clear
+                                cookies when you close the browser.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Your Cookie Preferences</h2>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Cookie Preference Center</h3>
+                    <p class="mb-6 text-gray-600">
+                        You can set your cookie preferences below. Please note that disabling certain cookies may affect
+                        the functionality of our website.
+                    </p>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="essential-cookies" class="custom-checkbox" checked disabled>
+                                <label for="essential-cookies" class="ml-3 text-gray-700 font-medium">Essential Cookies
+                                    (Required)</label>
+                            </div>
+                            <div class="text-xs text-gray-500">Always Active</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="analytics-cookies" class="custom-checkbox">
+                                <label for="analytics-cookies" class="ml-3 text-gray-700 font-medium">Analytics
+                                    Cookies</label>
+                            </div>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                <input type="checkbox" id="analytics-toggle"
+                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                <label for="analytics-toggle"
+                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="marketing-cookies" class="custom-checkbox">
+                                <label for="marketing-cookies" class="ml-3 text-gray-700 font-medium">Marketing
+                                    Cookies</label>
+                            </div>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                <input type="checkbox" id="marketing-toggle"
+                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                <label for="marketing-toggle"
+                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="preference-cookies" class="custom-checkbox">
+                                <label for="preference-cookies" class="ml-3 text-gray-700 font-medium">Preference
+                                    Cookies</label>
+                            </div>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                <input type="checkbox" id="preference-toggle"
+                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                <label for="preference-toggle"
+                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <button id="accept-all"
+                            class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Accept
+                            All</button>
+                        <button id="reject-all"
+                            class="bg-white border border-gray-300 text-gray-700 px-6 py-2 rounded-button font-medium hover:bg-gray-50 transition-all whitespace-nowrap">Reject
+                            All</button>
+                        <button id="save-preferences"
+                            class="bg-secondary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Save
+                            Preferences</button>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Changes to Our Cookie Policy</h2>
+                <p class="mb-6">
+                    We may update this Cookie Policy from time to time in order to reflect, for example, changes to the
+                    cookies we use or for other operational, legal or regulatory reasons. Please therefore re-visit this
+                    Cookie Policy regularly to stay informed about our use of cookies and related technologies.
+                </p>
+                <p class="mb-6">
+                    The date at the top of this Cookie Policy indicates when it was last updated.
+                </p>
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Contact Us</h2>
+                <p class="mb-6">
+                    If you have any questions about our use of cookies or other technologies, please email us at
+                    privacy@taxpro.com or use the contact form on our website.
+                </p>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                            alt="GrowthLink Tax Filings" class="h-12 brightness-200">
+                    </a>
+                    <p class="text-gray-400 mb-6">India's leading digital tax advisory firm providing comprehensive
+                        financial compliance services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Income Tax Returns</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Company
+                                Registrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">CFO Advisory</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">NRI Taxation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog & Resources</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/569e262c-399a-41f2-b0d0-214c3ee94a29"
+                                data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Privacy
+                                Policy</a></li>
+                        <li><a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/41ba4bda-c2db-4528-9c86-312902104d0c"
+                                data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Terms of
+                                Service</a></li>
+                        <li><a href="#" class="text-secondary font-medium transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 TaxPro Services. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                            data-readdy="true" class="hover:text-white transition-colors">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script id="mobile-menu-toggle">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+                }
+            }
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                });
+            });
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+            // Close mobile menu when window is resized to desktop view
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+        });
+    </script>
+    <script id="cookie-preference-center">
+        document.addEventListener('DOMContentLoaded', function () {
+            const analyticsCookies = document.getElementById('analytics-cookies');
+            const marketingCookies = document.getElementById('marketing-cookies');
+            const preferenceCookies = document.getElementById('preference-cookies');
+            const analyticsToggle = document.getElementById('analytics-toggle');
+            const marketingToggle = document.getElementById('marketing-toggle');
+            const preferenceToggle = document.getElementById('preference-toggle');
+            const acceptAllBtn = document.getElementById('accept-all');
+            const rejectAllBtn = document.getElementById('reject-all');
+            const savePreferencesBtn = document.getElementById('save-preferences');
+            // Sync checkboxes and toggles
+            function syncCheckboxAndToggle(checkbox, toggle) {
+                checkbox.addEventListener('change', function () {
+                    toggle.checked = this.checked;
+                });
+                toggle.addEventListener('change', function () {
+                    checkbox.checked = this.checked;
+                });
+            }
+            syncCheckboxAndToggle(analyticsCookies, analyticsToggle);
+            syncCheckboxAndToggle(marketingCookies, marketingToggle);
+            syncCheckboxAndToggle(preferenceCookies, preferenceToggle);
+            // Button actions
+            acceptAllBtn.addEventListener('click', function () {
+                analyticsCookies.checked = true;
+                marketingCookies.checked = true;
+                preferenceCookies.checked = true;
+                analyticsToggle.checked = true;
+                marketingToggle.checked = true;
+                preferenceToggle.checked = true;
+                saveCookiePreferences();
+            });
+            rejectAllBtn.addEventListener('click', function () {
+                analyticsCookies.checked = false;
+                marketingCookies.checked = false;
+                preferenceCookies.checked = false;
+                analyticsToggle.checked = false;
+                marketingToggle.checked = false;
+                preferenceToggle.checked = false;
+                saveCookiePreferences();
+            });
+            savePreferencesBtn.addEventListener('click', function () {
+                saveCookiePreferences();
+            });
+            function saveCookiePreferences() {
+                // In a real implementation, this would save the preferences to cookies
+                // and potentially reload necessary scripts
+                const preferences = {
+                    essential: true, // Always required
+                    analytics: analyticsCookies.checked,
+                    marketing: marketingCookies.checked,
+                    preference: preferenceCookies.checked
+                };
+                console.log('Cookie preferences saved:', preferences);
+                // Show feedback to user
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.className = 'fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50';
+                feedbackDiv.textContent = 'Your cookie preferences have been saved!';
+                document.body.appendChild(feedbackDiv);
+                setTimeout(() => {
+                    feedbackDiv.remove();
+                }, 3000);
+            }
+            // Load saved preferences (simulated)
+            function loadSavedPreferences() {
+                // In a real implementation, this would load from cookies
+                // For demo purposes, we'll just set some defaults
+                const savedPreferences = {
+                    analytics: true,
+                    marketing: false,
+                    preference: true
+                };
+                analyticsCookies.checked = savedPreferences.analytics;
+                marketingCookies.checked = savedPreferences.marketing;
+                preferenceCookies.checked = savedPreferences.preference;
+                analyticsToggle.checked = savedPreferences.analytics;
+                marketingToggle.checked = savedPreferences.marketing;
+                preferenceToggle.checked = savedPreferences.preference;
+            }
+            loadSavedPreferences();
+        });
+    </script>
+</body>
+
+</html>

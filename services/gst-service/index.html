@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Services - TaxPro</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0a2463', secondary: '#44aa99' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=Professional%2520office%2520environment%2520with%2520Indian%2520business%2520people%2520working%2520on%2520GST%2520documents%252C%2520computer%2520screens%2520showing%2520tax%2520forms%252C%2520blue%2520and%2520mint%2520green%2520color%2520scheme%252C%2520modern%2520clean%2520workspace%252C%2520abstract%2520financial%2520icons%2520floating%252C%2520high-quality%2520corporate%2520setting%2520with%2520soft%2520lighting&width=1920&height=1080&seq=gst-hero-bg&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(10, 36, 99, 0.9) 0%, rgba(10, 36, 99, 0.8) 50%, rgba(10, 36, 99, 0.5) 100%);
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item.active .timeline-dot {
+            background-color: #44aa99;
+            border-color: #44aa99;
+        }
+
+        .timeline-item.active .timeline-line {
+            background-color: #44aa99;
+        }
+
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+
+        .pricing-card.recommended {
+            border-color: #44aa99;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.recommended:hover {
+            transform: scale(1.08);
+        }
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #44aa99;
+            box-shadow: 0 0 0 3px rgba(68, 170, 153, 0.2);
+        }
+
+        .custom-checkbox {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .custom-checkbox.checked {
+            background: #44aa99;
+            border-color: #44aa99;
+        }
+
+        .custom-checkbox.checked:after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-radio {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .custom-radio.checked {
+            border-color: #44aa99;
+        }
+
+        .custom-radio.checked:after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #44aa99;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="bg-white bg-opacity-95 shadow-sm">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="flex items-center space-x-2">
+                        <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                            alt="GrowthLink Tax Filings" class="h-12">
+                    </a>
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                            data-readdy="true"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Home</a>
+                        <a href="#services"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Services</a>
+                        <a href="#process"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Process</a>
+                        <a href="#pricing"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Pricing</a>
+                        <a href="#contact"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Contact</a>
+                    </nav>
+                    <div class="flex items-center space-x-4">
+                        <a href="#contact"
+                            class="hidden lg:inline-block bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Free
+                            Consultation</a>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                            <i class="ri-menu-line ri-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full top-full left-0">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Home</a>
+                    <a href="#services"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Services</a>
+                    <a href="#process"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Process</a>
+                    <a href="#pricing"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Pricing</a>
+                    <a href="#contact"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Contact</a>
+                    <a href="#contact"
+                        class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all text-center whitespace-nowrap text-lg mt-4">Free
+                        Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 pt-24">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="/" class="hover:text-primary transition-colors">Home</a>
+                <span class="mx-2">/</span>
+                <a href="#" class="hover:text-primary transition-colors">Services</a>
+                <span class="mx-2">/</span>
+                <span class="text-primary font-medium">GST Services</span>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero-section relative">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 text-white mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Comprehensive <span
+                            class="text-secondary">GST Services</span></h1>
+                    <p class="text-xl mb-8 text-gray-100 max-w-lg">Streamline your GST compliance with our expert-led
+                        solutions designed for businesses of all sizes across India.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#services"
+                            class="bg-secondary text-primary px-8 py-3 rounded-button font-semibold text-center hover:bg-opacity-90 transition-all whitespace-nowrap">Explore
+                            Services</a>
+                        <a href="#contact"
+                            class="border-2 border-white text-white px-8 py-3 rounded-button font-semibold text-center hover:bg-white hover:text-primary transition-all whitespace-nowrap">Free
+                            Consultation</a>
+                    </div>
+                    <div class="mt-12 flex items-center space-x-2">
+                        <div class="flex -space-x-2">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520indian%2520male%2520face%252C%2520headshot%252C%2520business%2520attire%252C%2520neutral%2520expression%252C%2520high%2520quality%2520portrait&width=100&height=100&seq=user1&orientation=squarish"
+                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520indian%2520female%2520face%252C%2520headshot%252C%2520business%2520attire%252C%2520neutral%2520expression%252C%2520high%2520quality%2520portrait&width=100&height=100&seq=user2&orientation=squarish"
+                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520indian%2520male%2520face%252C%2520headshot%252C%2520business%2520attire%252C%2520neutral%2520expression%252C%2520high%2520quality%2520portrait&width=100&height=100&seq=user3&orientation=squarish"
+                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                        </div>
+                        <span class="text-sm text-gray-200">Trusted by 5,000+ businesses for GST compliance</span>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div
+                        class="relative bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-lg border border-white border-opacity-20 max-w-md">
+                        <h3 class="text-white text-xl font-bold mb-4">GST Compliance Status</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm text-gray-200 mb-1">
+                                    <span>Monthly Returns</span>
+                                    <span>98% Compliant</span>
+                                </div>
+                                <div class="w-full bg-gray-200 bg-opacity-20 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 98%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm text-gray-200 mb-1">
+                                    <span>Input Tax Credit</span>
+                                    <span>92% Utilized</span>
+                                </div>
+                                <div class="w-full bg-gray-200 bg-opacity-20 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm text-gray-200 mb-1">
+                                    <span>E-way Bills</span>
+                                    <span>100% Generated</span>
+                                </div>
+                                <div class="w-full bg-gray-200 bg-opacity-20 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-white bg-opacity-10 rounded-lg">
+                            <div class="flex items-center">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-secondary bg-opacity-20 flex items-center justify-center mr-3">
+                                    <i class="ri-alarm-warning-line text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Next GST Filing Due</h4>
+                                    <p class="text-gray-200 text-sm">July 20, 2025 (GSTR-3B)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Features Grid -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our GST Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive GST solutions to ensure your business remains
+                    compliant while maximizing input tax credits and minimizing liabilities.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-list-3-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">GST Registration</h3>
+                    <p class="text-gray-600 mb-4">Complete assistance with GST registration for businesses across all
+                        states in India.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">New Business Registration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Multiple State Registrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Amendment in Registration</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-paper-2-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">GST Returns Filing</h3>
+                    <p class="text-gray-600 mb-4">Timely and accurate filing of all types of GST returns for your
+                        business.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">GSTR-1 & GSTR-3B Monthly/Quarterly</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">GSTR-9 Annual Return</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Composition Scheme Returns</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-scales-3-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">GST Reconciliation</h3>
+                    <p class="text-gray-600 mb-4">Detailed reconciliation of GST data to ensure accuracy and identify
+                        discrepancies.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Books vs. GSTR Reconciliation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Input Tax Credit Reconciliation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Vendor Reconciliation</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-truck-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">E-way Bills</h3>
+                    <p class="text-gray-600 mb-4">Efficient management of e-way bills for seamless movement of goods
+                        across India.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">E-way Bill Generation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">E-way Bill Cancellation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">E-way Bill Extension</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-refund-2-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Input Tax Credit</h3>
+                    <p class="text-gray-600 mb-4">Maximize your input tax credit utilization with our expert analysis
+                        and planning.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">ITC Eligibility Assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">ITC Planning & Optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">ITC Refund Assistance</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-search-eye-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">GST Audit & Assessment</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive audit support and assistance during GST assessments and
+                        notices.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Internal GST Audit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">GST Notice Handling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Assessment Representation</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Timeline -->
+    <section id="process" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our GST Compliance Process</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We follow a systematic approach to ensure your business
+                    remains GST compliant at all times.</p>
+            </div>
+            <div class="relative">
+                <!-- Desktop Timeline -->
+                <div class="hidden md:block">
+                    <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-1 bg-gray-200"></div>
+                    <div class="flex justify-between relative">
+                        <!-- Step 1 -->
+                        <div class="timeline-item active w-1/5 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-file-list-3-line text-primary"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Data Collection</h3>
+                                <p class="text-gray-600">Gathering all relevant invoices and transaction data.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="timeline-item w-1/5 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-scales-3-line text-gray-400"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Reconciliation</h3>
+                                <p class="text-gray-600">Matching purchase and sales data with vendor returns.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="timeline-item w-1/5 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-calculator-line text-gray-400"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Tax Computation</h3>
+                                <p class="text-gray-600">Calculating tax liability and eligible input credits.</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="timeline-item w-1/5 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-file-paper-2-line text-gray-400"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Return Filing</h3>
+                                <p class="text-gray-600">Preparing and submitting returns on the GST portal.</p>
+                            </div>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="timeline-item w-1/5 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-file-chart-line text-gray-400"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Compliance Report</h3>
+                                <p class="text-gray-600">Providing detailed compliance status and recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Timeline -->
+                <div class="md:hidden space-y-8">
+                    <!-- Step 1 -->
+                    <div class="timeline-item active flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-file-list-3-line text-primary"></i>
+                            </div>
+                            <div class="timeline-line h-full w-0.5 bg-gray-200 mx-auto mt-2"></div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Data Collection</h3>
+                            <p class="text-gray-600">Gathering all relevant invoices and transaction data.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-item flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-scales-3-line text-gray-400"></i>
+                            </div>
+                            <div class="timeline-line h-full w-0.5 bg-gray-200 mx-auto mt-2"></div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Reconciliation</h3>
+                            <p class="text-gray-600">Matching purchase and sales data with vendor returns.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-item flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-calculator-line text-gray-400"></i>
+                            </div>
+                            <div class="timeline-line h-full w-0.5 bg-gray-200 mx-auto mt-2"></div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Tax Computation</h3>
+                            <p class="text-gray-600">Calculating tax liability and eligible input credits.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-item flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-file-paper-2-line text-gray-400"></i>
+                            </div>
+                            <div class="timeline-line h-full w-0.5 bg-gray-200 mx-auto mt-2"></div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Return Filing</h3>
+                            <p class="text-gray-600">Preparing and submitting returns on the GST portal.</p>
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="timeline-item flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-file-chart-line text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Compliance Report</h3>
+                            <p class="text-gray-600">Providing detailed compliance status and recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Benefits of Our GST Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Partner with us to experience these key advantages for your
+                    business.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-shield-check-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">100% Compliance</h3>
+                    <p class="text-gray-600">Ensure complete adherence to all GST regulations and avoid penalties.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-money-dollar-circle-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cost Savings</h3>
+                    <p class="text-gray-600">Maximize input tax credits and optimize your tax planning to reduce costs.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-time-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Time Efficiency</h3>
+                    <p class="text-gray-600">Save valuable time by outsourcing complex GST compliance tasks to experts.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-customer-service-2-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Expert Support</h3>
+                    <p class="text-gray-600">Access to dedicated GST professionals for any compliance queries or issues.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-16 bg-gray-50 rounded-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">98%</div>
+                        <p class="text-gray-600">Compliance Rate</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">₹50M+</div>
+                        <p class="text-gray-600">Tax Savings for Clients</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">5,000+</div>
+                        <p class="text-gray-600">GST Returns Filed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GST Analytics Dashboard -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">GST Analytics Dashboard</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our clients receive detailed analytics to track their GST
+                    compliance and financial metrics.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Monthly GST Liability Trend</h3>
+                        <div id="gst-trend-chart" class="h-80 w-full"></div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Input vs Output Tax</h3>
+                        <div id="input-output-chart" class="h-80 w-full"></div>
+                    </div>
+                </div>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold">Total Tax Liability</h4>
+                            <span class="text-sm text-gray-500">Last Quarter</span>
+                        </div>
+                        <div class="text-2xl font-bold text-primary">₹4,28,750</div>
+                        <div class="text-sm text-green-600 mt-2 flex items-center">
+                            <i class="ri-arrow-up-line mr-1"></i> 8.2% from previous quarter
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold">Input Tax Credit</h4>
+                            <span class="text-sm text-gray-500">Last Quarter</span>
+                        </div>
+                        <div class="text-2xl font-bold text-primary">₹3,65,200</div>
+                        <div class="text-sm text-green-600 mt-2 flex items-center">
+                            <i class="ri-arrow-up-line mr-1"></i> 12.5% from previous quarter
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold">Net Tax Paid</h4>
+                            <span class="text-sm text-gray-500">Last Quarter</span>
+                        </div>
+                        <div class="text-2xl font-bold text-primary">₹63,550</div>
+                        <div class="text-sm text-red-500 mt-2 flex items-center">
+                            <i class="ri-arrow-down-line mr-1"></i> 10.3% from previous quarter
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Plans -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">GST Service Plans</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Choose the plan that best fits your business needs and
+                    compliance requirements.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="pricing-card bg-white rounded-lg shadow-md p-8 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Basic</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">₹1,999<span
+                                class="text-sm text-gray-500 font-normal">/month</span></div>
+                        <p class="text-gray-600">For small businesses with simple GST requirements</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Monthly GSTR-1 & GSTR-3B Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Basic Reconciliation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">E-way Bill Generation (5/month)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Email Support</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="ri-close-line mt-1 mr-2"></i>
+                            <span>Advanced Reconciliation</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="ri-close-line mt-1 mr-2"></i>
+                            <span>GST Audit Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                        class="block text-center bg-gray-100 text-primary px-6 py-3 rounded-button font-semibold hover:bg-gray-200 transition-all whitespace-nowrap">Get
+                        Started</a>
+                </div>
+                <!-- Standard Plan -->
+                <div
+                    class="pricing-card recommended bg-white rounded-lg shadow-lg p-8 border-2 border-secondary relative">
+                    <div
+                        class="absolute top-0 right-0 bg-secondary text-white px-4 py-1 text-sm font-bold rounded-bl-lg rounded-tr-lg">
+                        POPULAR</div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Standard</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">₹3,499<span
+                                class="text-sm text-gray-500 font-normal">/month</span></div>
+                        <p class="text-gray-600">For growing businesses with moderate GST complexity</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Monthly GSTR-1 & GSTR-3B Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Advanced Reconciliation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">E-way Bill Generation (15/month)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Email & Phone Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">ITC Optimization</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="ri-close-line mt-1 mr-2"></i>
+                            <span>GST Audit Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                        class="block text-center bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Get
+                        Started</a>
+                </div>
+                <!-- Premium Plan -->
+                <div class="pricing-card bg-white rounded-lg shadow-md p-8 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Premium</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">₹5,999<span
+                                class="text-sm text-gray-500 font-normal">/month</span></div>
+                        <p class="text-gray-600">For established businesses with complex GST requirements</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Monthly GSTR-1 & GSTR-3B Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Comprehensive Reconciliation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Unlimited E-way Bills</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">Priority Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">ITC Optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-600">GST Audit Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                        class="block text-center bg-gray-100 text-primary px-6 py-3 rounded-button font-semibold hover:bg-gray-200 transition-all whitespace-nowrap">Get
+                        Started</a>
+                </div>
+            </div>
+            <div class="mt-12 bg-gray-50 rounded-lg p-6 text-center">
+                <h3 class="text-xl font-bold mb-2">Need a Custom Plan?</h3>
+                <p class="text-gray-600 mb-4">We offer tailored GST solutions for businesses with specific requirements.
+                </p>
+                <a href="#contact"
+                    class="inline-block bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Contact
+                    Us</a>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about GST services and
+                    compliance.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-bold">When is my business required to register for GST?</h3>
+                            <i class="ri-arrow-down-s-line faq-icon transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Businesses with an annual turnover exceeding ₹20 lakhs (₹10 lakhs
+                                for special category states) are required to register for GST. Additionally, businesses
+                                involved in interstate supplies, e-commerce operations, or those liable to pay tax under
+                                reverse charge mechanism must register irrespective of turnover threshold.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-bold">What are the due dates for filing GST returns?</h3>
+                            <i class="ri-arrow-down-s-line faq-icon transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">For regular businesses, GSTR-1 (outward supplies) is due by the
+                                11th of the following month, and GSTR-3B (summary return) is due by the 20th of the
+                                following month. For quarterly filers under QRMP scheme, GSTR-1 is due by the 13th of
+                                the month following the quarter, and GSTR-3B by the 22nd or 24th depending on the state.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-bold">How does Input Tax Credit (ITC) work under GST?</h3>
+                            <i class="ri-arrow-down-s-line faq-icon transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Input Tax Credit allows businesses to claim credit for GST paid on
+                                purchases used for business purposes. To claim ITC, the supplier must have filed their
+                                returns, the recipient must have received the goods/services, and possess a valid tax
+                                invoice. ITC can be utilized to offset output tax liability, reducing the net tax
+                                payable.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-bold">What happens if I miss a GST filing deadline?</h3>
+                            <i class="ri-arrow-down-s-line faq-icon transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Missing GST filing deadlines results in late fees of ₹50 per day
+                                (₹20 per day for nil returns) up to a maximum of ₹10,000. Additionally, interest at 18%
+                                per annum is charged on the tax amount due. Repeated non-compliance can lead to
+                                penalties, cancellation of registration, and legal action.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-bold">When do I need to generate an e-way bill?</h3>
+                            <i class="ri-arrow-down-s-line faq-icon transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">An e-way bill is required for movement of goods with value
+                                exceeding ₹50,000, whether for supply, return, or other reasons. For interstate
+                                movement, e-way bills are mandatory regardless of value. The bill must be generated
+                                before the commencement of movement and is valid for varying periods depending on the
+                                distance (1-15 days).</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-bold">How can I reconcile my GST data effectively?</h3>
+                            <i class="ri-arrow-down-s-line faq-icon transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Effective GST reconciliation involves comparing your purchase and
+                                sales records with GSTR-2A/2B (auto-populated from supplier returns), identifying
+                                mismatches, following up with vendors for corrections, and ensuring all eligible ITC is
+                                claimed. Regular reconciliation helps prevent discrepancies, optimize tax credits, and
+                                avoid departmental notices.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-lg font-bold">What documents do I need to provide for GST services?</h3>
+                            <i class="ri-arrow-down-s-line faq-icon transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">For GST services, you typically need to provide sales and purchase
+                                invoices, e-way bills, credit/debit notes, bank statements, previous GST returns,
+                                HSN/SAC codes for your products/services, and details of any reverse charge
+                                transactions. For registration, business incorporation documents, address proof, and
+                                identity proof of promoters are required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call-to-Action Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Simplify Your GST Compliance?</h2>
+                <p class="text-xl text-gray-200 mb-8">Join thousands of satisfied businesses who trust us with their GST
+                    requirements.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact"
+                        class="bg-white text-primary px-8 py-3 rounded-button font-semibold text-center hover:bg-opacity-90 transition-all whitespace-nowrap">Get
+                        Started</a>
+                    <a href="#"
+                        class="border-2 border-white text-white px-8 py-3 rounded-button font-semibold text-center hover:bg-white hover:text-primary transition-all whitespace-nowrap">Schedule
+                        a Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions about our GST services? Reach out to us and
+                    our team will get back to you promptly.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-2xl font-bold mb-6">GST Experts Contact</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Office Address</h4>
+                                    <p class="text-gray-600">103, Vinodam Residency, Road no 2, ALIND Employees Colony,
+                                        Sudarshan Nagar, Serlingampally, Hyderabad - 500019</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">GST Helpline</h4>
+                                    <p class="text-gray-600">+91 9936093609</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email Address</h4>
+                                    <p class="text-gray-600">gst@growthlinktaxfilings.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-time-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">GST Support Hours</h4>
+                                    <p class="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-primary rounded-lg p-6 text-white">
+                        <h4 class="text-xl font-bold mb-4">GST Filing Calendar</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-medium">GSTR-1 (Monthly)</p>
+                                    <p class="text-sm text-gray-200">Outward Supplies</p>
+                                </div>
+                                <p class="font-bold">11th of next month</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-medium">GSTR-3B (Monthly)</p>
+                                    <p class="text-sm text-gray-200">Summary Return</p>
+                                </div>
+                                <p class="font-bold">20th of next month</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-medium">GSTR-1 (Quarterly)</p>
+                                    <p class="text-sm text-gray-200">For QRMP Scheme</p>
+                                </div>
+                                <p class="font-bold">13th of next quarter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                        <h3 class="text-2xl font-bold mb-6">GST Service Inquiry</h3>
+                        <form id="contact-form" action="https://readdy.ai/api/form/d1cghnert4h97ru0k630" method="POST"
+                            enctype="application/x-www-form-urlencoded">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                        placeholder="Enter your name" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                        placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                    placeholder="Enter your phone number">
+                            </div>
+                            <div class="mb-6">
+                                <label for="business_type" class="block text-gray-700 font-medium mb-2">Business
+                                    Type</label>
+                                <div class="relative">
+                                    <select id="business_type" name="business_type"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:outline-none pr-8">
+                                        <option value="">Select your business type</option>
+                                        <option value="proprietorship">Proprietorship</option>
+                                        <option value="partnership">Partnership Firm</option>
+                                        <option value="llp">Limited Liability Partnership</option>
+                                        <option value="pvt_ltd">Private Limited Company</option>
+                                        <option value="public_ltd">Public Limited Company</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2">GST Services Required</label>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox" data-value="registration"></div>
+                                        <input type="checkbox" name="services[]" value="registration" class="hidden">
+                                        <label class="ml-2 text-gray-600 cursor-pointer">GST Registration</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox" data-value="returns"></div>
+                                        <input type="checkbox" name="services[]" value="returns" class="hidden">
+                                        <label class="ml-2 text-gray-600 cursor-pointer">GST Returns Filing</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox" data-value="reconciliation"></div>
+                                        <input type="checkbox" name="services[]" value="reconciliation" class="hidden">
+                                        <label class="ml-2 text-gray-600 cursor-pointer">GST Reconciliation</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox" data-value="eway"></div>
+                                        <input type="checkbox" name="services[]" value="eway" class="hidden">
+                                        <label class="ml-2 text-gray-600 cursor-pointer">E-way Bills</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox" data-value="itc"></div>
+                                        <input type="checkbox" name="services[]" value="itc" class="hidden">
+                                        <label class="ml-2 text-gray-600 cursor-pointer">Input Tax Credit</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox" data-value="audit"></div>
+                                        <input type="checkbox" name="services[]" value="audit" class="hidden">
+                                        <label class="ml-2 text-gray-600 cursor-pointer">GST Audit & Assessment</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your
+                                    Requirements</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                    placeholder="Tell us about your specific GST requirements"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                        <input type="checkbox" id="consent" name="consent"
+                                            class="absolute opacity-0 w-0 h-0">
+                                        <div
+                                            class="bg-gray-300 rounded-full h-6 w-10 cursor-pointer transition-colors duration-200 ease-in">
+                                        </div>
+                                        <div
+                                            class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 ease-in transform">
+                                        </div>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">I agree to receive communications about GST
+                                        services and updates.</span>
+                                </label>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Submit
+                                Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919936093609"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+        <i class="ri-whatsapp-line ri-2x"></i>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                            alt="GrowthLink Tax Filings" class="h-12 brightness-200">
+                    </a>
+                    <p class="text-gray-400 mb-6">India's leading digital tax advisory firm providing comprehensive GST
+                        compliance services for businesses of all sizes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">GST Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Registration</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Returns Filing</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Reconciliation</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">E-way Bills</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Input Tax Credit</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Audit &
+                                Assessment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                                data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                        </li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+                        </li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white transition-colors">Process</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Resources</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for GST updates and compliance tips.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address"
+                                class="px-4 py-2 rounded-l-button w-full border-none focus:outline-none text-gray-800">
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-2 rounded-r-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-visa-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-mastercard-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-paypal-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-amazon-pay-fill ri-lg text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 TaxPro Services. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-24 z-50 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-colors opacity-0 invisible">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+    <!-- Scripts -->
+    <script id="header-scroll-effect">
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.getElementById('header');
+            const navLinks = document.querySelectorAll('nav a');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const headerHeight = header.offsetHeight;
+                            const targetPosition = targetElement.offsetTop - headerHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="mobile-menu-toggle">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const header = document.getElementById('header');
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+                }
+            }
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                });
+            });
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!header.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+            // Close mobile menu when window is resized to desktop view
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+        });
+    </script>
+    <script id="timeline-animation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            function activateTimelineItem(index) {
+                timelineItems.forEach((item, i) => {
+                    if (i <= index) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            // For demo purposes, cycle through the timeline items
+            let currentIndex = 0;
+            activateTimelineItem(currentIndex);
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % timelineItems.length;
+                activateTimelineItem(currentIndex);
+            }, 3000);
+        });
+    </script>
+    <script id="faq-accordion">
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function () {
+                    const currentlyActive = document.querySelector('.faq-item.active');
+                    if (currentlyActive && currentlyActive !== item) {
+                        currentlyActive.classList.remove('active');
+                    }
+                    item.classList.toggle('active');
+                });
+            });
+            // Open the first FAQ item by default
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+        });
+    </script>
+    <script id="custom-form-elements">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Custom Checkbox
+            const customCheckboxes = document.querySelectorAll('.custom-checkbox');
+            customCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', function () {
+                    const value = this.getAttribute('data-value');
+                    const input = this.nextElementSibling;
+                    this.classList.toggle('checked');
+                    input.checked = this.classList.contains('checked');
+                });
+            });
+            // Toggle Switch
+            const consentCheckbox = document.getElementById('consent');
+            const toggleDot = document.querySelector('.toggle-dot');
+            consentCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    toggleDot.classList.add('translate-x-4');
+                    toggleDot.parentElement.classList.add('bg-secondary');
+                    toggleDot.parentElement.classList.remove('bg-gray-300');
+                } else {
+                    toggleDot.classList.remove('translate-x-4');
+                    toggleDot.parentElement.classList.remove('bg-secondary');
+                    toggleDot.parentElement.classList.add('bg-gray-300');
+                }
+            });
+        });
+    </script>
+    <script id="back-to-top">
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script id="charts-initialization">
+        document.addEventListener('DOMContentLoaded', function () {
+            // GST Trend Chart
+            const gstTrendChart = echarts.init(document.getElementById('gst-trend-chart'));
+            const gstTrendOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    borderColor: '#ddd',
+                    borderWidth: 1,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    top: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#ddd'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#1f2937'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        color: '#1f2937'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#eee'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'GST Liability',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(87, 181, 231, 1)'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                {
+                                    offset: 0,
+                                    color: 'rgba(87, 181, 231, 0.3)'
+                                },
+                                {
+                                    offset: 1,
+                                    color: 'rgba(87, 181, 231, 0.1)'
+                                }
+                            ])
+                        },
+                        data: [68000, 75000, 62000, 80000, 72000, 85000]
+                    }
+                ]
+            };
+            gstTrendChart.setOption(gstTrendOption);
+            // Input vs Output Tax Chart
+            const inputOutputChart = echarts.init(document.getElementById('input-output-chart'));
+            const inputOutputOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    borderColor: '#ddd',
+                    borderWidth: 1,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                legend: {
+                    data: ['Input Tax', 'Output Tax'],
+                    bottom: 0,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '15%',
+                    top: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#ddd'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#1f2937'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        color: '#1f2937'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#eee'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Input Tax',
+                        type: 'bar',
+                        barWidth: '20%',
+                        itemStyle: {
+                            color: 'rgba(141, 211, 199, 1)',
+                            borderRadius: [4, 4, 0, 0]
+                        },
+                        data: [58000, 62000, 50000, 68000, 60000, 72000]
+                    },
+                    {
+                        name: 'Output Tax',
+                        type: 'bar',
+                        barWidth: '20%',
+                        itemStyle: {
+                            color: 'rgba(251, 191, 114, 1)',
+                            borderRadius: [4, 4, 0, 0]
+                        },
+                        data: [68000, 75000, 62000, 80000, 72000, 85000]
+                    }
+                ]
+            };
+            inputOutputChart.setOption(inputOutputOption);
+            // Resize charts when window size changes
+            window.addEventListener('resize', function () {
+                gstTrendChart.resize();
+                inputOutputChart.resize();
+            });
+        });
+    </script>
+    <script id="contact-form-validation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Basic form validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                if (!name || !email || !phone) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                // Email validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                // Phone validation
+                const phonePattern = /^\d{10}$/;
+                if (!phonePattern.test(phone.replace(/[^0-9]/g, ''))) {
+                    alert('Please enter a valid 10-digit phone number.');
+                    return;
+                }
+                // Disable button and show loading state
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Submitting...';
+                // Simulate form submission (replace with actual form submission)
+                setTimeout(() => {
+                    alert('Thank you for your inquiry! Our GST expert will contact you shortly.');
+                    contactForm.reset();
+                    // Reset custom form elements
+                    document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+                        checkbox.classList.remove('checked');
+                    });
+                    const toggleDot = document.querySelector('.toggle-dot');
+                    toggleDot.classList.remove('translate-x-4');
+                    toggleDot.parentElement.classList.remove('bg-secondary');
+                    toggleDot.parentElement.classList.add('bg-gray-300');
+                    // Re-enable button
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = 'Submit Inquiry';
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+
+</html>

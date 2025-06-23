@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxPro - India's Digital Tax Partner</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0a2463', secondary: '#44aa99' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=Professional%20modern%20finance%20office%20with%20blue%20and%20mint%20green%20color%20scheme%2C%20Indian%20business%20professionals%20working%20with%20tax%20documents%2C%20floating%20financial%20icons%2C%20abstract%20wave%20pattern%20in%20background%2C%20clean%20and%20minimal%20design%20style%2C%20high-quality%20corporate%20environment&width=1920&height=1080&seq=hero-bg-1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(10, 36, 99, 0.9) 0%, rgba(10, 36, 99, 0.8) 50%, rgba(10, 36, 99, 0.5) 100%);
+        }
+
+        .floating-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .floating-icon:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .floating-icon:nth-child(4) {
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item.active .timeline-dot {
+            background-color: #44aa99;
+            border-color: #44aa99;
+        }
+
+        .timeline-item.active .timeline-line {
+            background-color: #44aa99;
+        }
+
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+
+        .pricing-card.recommended {
+            border-color: #44aa99;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.recommended:hover {
+            transform: scale(1.08);
+        }
+
+        .chatbot-toggle {
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #44aa99;
+            box-shadow: 0 0 0 3px rgba(68, 170, 153, 0.2);
+        }
+
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .counter-value {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="bg-white bg-opacity-95 shadow-sm">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="flex items-center space-x-2">
+                        <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                            alt="GrowthLink Tax Filings" class="h-12">
+                    </a>
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <a href="#services"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Services</a>
+                        <a href="#process"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Process</a>
+                        <a href="#contact"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Contact</a>
+                    </nav>
+                    <div class="flex items-center space-x-4">
+                        <a href="https://" data-readdy="true"
+                            class="hidden lg:inline-block bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Free
+                            Consultation</a>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                            <i class="ri-menu-line ri-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full top-full left-0">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#services"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Services</a>
+                    <a href="#process"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Process</a>
+                    <a href="#contact"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Contact</a>
+                    <a href="#contact"
+                        class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all text-center whitespace-nowrap text-lg mt-4">Free
+                        Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section relative min-h-screen flex items-center">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 text-white mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">India's Digital <span
+                            class="text-secondary">Tax Partner</span></h1>
+                    <p class="text-xl mb-8 text-gray-100 max-w-lg">Simplifying taxes for individuals and businesses with
+                        expert CA services and cutting-edge technology.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#services"
+                            class="bg-secondary text-primary px-8 py-3 rounded-button font-semibold text-center hover:bg-opacity-90 transition-all whitespace-nowrap">Start
+                            Filing</a>
+                        <a href="#contact"
+                            class="border-2 border-white text-white px-8 py-3 rounded-button font-semibold text-center hover:bg-white hover:text-primary transition-all whitespace-nowrap">Free
+                            Call</a>
+                    </div>
+                    <div class="mt-12 flex items-center space-x-2">
+                        <div class="flex -space-x-2">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20indian%20male%20face%2C%20headshot%2C%20business%20attire%2C%20neutral%20expression%2C%20high%20quality%20portrait&width=100&height=100&seq=user1&orientation=squarish"
+                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20indian%20female%20face%2C%20headshot%2C%20business%20attire%2C%20neutral%20expression%2C%20high%20quality%20portrait&width=100&height=100&seq=user2&orientation=squarish"
+                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20indian%20male%20face%2C%20headshot%2C%20business%20attire%2C%20neutral%20expression%2C%20high%20quality%20portrait&width=100&height=100&seq=user3&orientation=squarish"
+                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                        </div>
+                        <span class="text-sm text-gray-200">Trusted by 10,000+ clients across India</span>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 relative">
+                    <div class="relative h-96">
+                        <div
+                            class="absolute top-10 left-10 w-16 h-16 bg-white bg-opacity-20 rounded-lg backdrop-blur-sm p-3 floating-icon">
+                            <i class="ri-file-list-3-line ri-2x text-white"></i>
+                        </div>
+                        <div
+                            class="absolute top-20 right-20 w-16 h-16 bg-white bg-opacity-20 rounded-lg backdrop-blur-sm p-3 floating-icon">
+                            <i class="ri-bank-card-line ri-2x text-white"></i>
+                        </div>
+                        <div
+                            class="absolute bottom-20 left-20 w-16 h-16 bg-white bg-opacity-20 rounded-lg backdrop-blur-sm p-3 floating-icon">
+                            <i class="ri-secure-payment-line ri-2x text-white"></i>
+                        </div>
+                        <div
+                            class="absolute bottom-10 right-10 w-16 h-16 bg-white bg-opacity-20 rounded-lg backdrop-blur-sm p-3 floating-icon">
+                            <i class="ri-shield-check-line ri-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white text-center">
+                <p class="mb-2 text-sm">Scroll to explore</p>
+                <div
+                    class="w-8 h-8 mx-auto flex items-center justify-center rounded-full border border-white/50 scroll-down">
+                    <i class="ri-arrow-down-line"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Us</h2>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">GrowthLink Tax Filings is your trusted partner
+                        in navigating the complexities of tax compliance, financial reporting, and regulatory filings.
+                        Our mission is to simplify taxation for individuals, startups, and businesses by providing
+                        expert-led, accurate, and timely tax solutions. With a dedicated team of professionals and a
+                        customer-first approach, for all your tax needs.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-time-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">10+ Years Experience</h3>
+                                <p class="text-gray-600">Proven track record of excellence in tax services</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-team-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Expert CA Team</h3>
+                                <p class="text-gray-600">Qualified Chartered Accountants at your service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://readdy.ai/api/search-image?query=modern%20office%20interior%20with%20professional%20Indian%20chartered%20accountants%20working%2C%20team%20collaboration%2C%20clean%20and%20professional%20environment%2C%20high-end%20corporate%20setting&width=600&height=400&seq=about-us&orientation=landscape"
+                        alt="About Us" class="rounded-lg shadow-lg w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-4xl font-bold text-primary">500+</div>
+                            <div class="text-gray-600">Happy Clients<br>Served Monthly</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Comprehensive Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer a wide range of tax and financial services to meet
+                    your needs, all backed by experienced Chartered Accountants.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-list-3-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Income Tax Services</h3>
+                    <p class="text-gray-600 mb-4">Expert filing for individuals, professionals, and businesses with
+                        maximum deductions and compliance.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Salaried Individuals (ITR-1, 2)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Business & Professionals (ITR-3, 4)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Capital Gains Computation</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-bank-card-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">GST Services</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive GST compliance solutions for businesses of all sizes
+                        across India.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">GST Registration & Returns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">E-way Bills & E-invoicing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">GST Reconciliation & Audit</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-building-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Business Registrations</h3>
+                    <p class="text-gray-600 mb-4">End-to-end business registration services with ongoing compliance
+                        support.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Private Limited Company</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">LLP & Partnership Firm</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">One Person Company</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-line-chart-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">CFO Advisory</h3>
+                    <p class="text-gray-600 mb-4">Strategic financial guidance and planning for growing businesses and
+                        startups.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Financial Planning & Analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Cash Flow Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Fundraising Support</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-global-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">NRI Taxation</h3>
+                    <p class="text-gray-600 mb-4">Specialized tax services for Non-Resident Indians with investments in
+                        India.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">NRI ITR Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">DTAA Benefits & Planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">15CA/CB Certification</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-calculator-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tax Planning</h3>
+                    <p class="text-gray-600 mb-4">Strategic tax planning to minimize liabilities and maximize savings
+                        legally.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Investment Planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Business Restructuring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Retirement Planning</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 7 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-list-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Statutory Compliances</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive statutory compliance management for businesses of all
+                        sizes.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">ROC Compliances</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">SEBI Compliances</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Legal Documentation</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 8 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-shield-check-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Business Licenses</h3>
+                    <p class="text-gray-600 mb-4">End-to-end assistance in obtaining and maintaining business licenses.
+                    </p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">FSSAI License</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Trade License</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Industry Permits</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 9 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-team-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Payroll Management</h3>
+                    <p class="text-gray-600 mb-4">Complete payroll processing and compliance solutions for
+                        organizations.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Salary Processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">PF & ESI Compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Statutory Reports</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 10 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-book-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Accounting Services</h3>
+                    <p class="text-gray-600 mb-4">Professional accounting and bookkeeping services for businesses.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Bookkeeping</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Financial Statements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">MIS Reports</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Service Card 11 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-bank-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Loan Consultancy</h3>
+                    <p class="text-gray-600 mb-4">Expert guidance for business loans and financial assistance.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Business Loans</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Project Financing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Working Capital</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/c26f1ae9-e7b2-4d37-94be-7fcfbef37e51"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Simple Process</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We've streamlined the tax filing process to make it as easy
+                    as possible for you.</p>
+            </div>
+            <div class="relative">
+                <!-- Desktop Timeline -->
+                <div class="hidden md:block">
+                    <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-1 bg-gray-200"></div>
+                    <div class="flex justify-between relative">
+                        <!-- Step 1 -->
+                        <div class="timeline-item active w-1/4 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-upload-cloud-line text-primary"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Document Upload</h3>
+                                <p class="text-gray-600">Securely upload your tax documents through our encrypted
+                                    portal.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="timeline-item w-1/4 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-file-search-line text-gray-400"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Expert Review</h3>
+                                <p class="text-gray-600">Our CA team reviews your documents and identifies all
+                                    deductions.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="timeline-item w-1/4 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-file-paper-2-line text-gray-400"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Filing Process</h3>
+                                <p class="text-gray-600">We prepare and file your returns with the appropriate
+                                    authorities.</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="timeline-item w-1/4 text-center px-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 mx-auto mb-4 relative z-10 flex items-center justify-center">
+                                <i class="ri-customer-service-2-line text-gray-400"></i>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-xl font-bold mb-2">Ongoing Support</h3>
+                                <p class="text-gray-600">Year-round assistance for any tax notices or questions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Timeline -->
+                <div class="md:hidden space-y-8">
+                    <!-- Step 1 -->
+                    <div class="timeline-item active flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-upload-cloud-line text-primary"></i>
+                            </div>
+                            <div class="timeline-line h-full w-0.5 bg-gray-200 mx-auto mt-2"></div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Document Upload</h3>
+                            <p class="text-gray-600">Securely upload your tax documents through our encrypted portal.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-item flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-file-search-line text-gray-400"></i>
+                            </div>
+                            <div class="timeline-line h-full w-0.5 bg-gray-200 mx-auto mt-2"></div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Expert Review</h3>
+                            <p class="text-gray-600">Our CA team reviews your documents and identifies all deductions.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-item flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-file-paper-2-line text-gray-400"></i>
+                            </div>
+                            <div class="timeline-line h-full w-0.5 bg-gray-200 mx-auto mt-2"></div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Filing Process</h3>
+                            <p class="text-gray-600">We prepare and file your returns with the appropriate authorities.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-item flex">
+                        <div class="mr-4">
+                            <div
+                                class="timeline-dot w-8 h-8 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                                <i class="ri-customer-service-2-line text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-bold mb-2">Ongoing Support</h3>
+                            <p class="text-gray-600">Year-round assistance for any tax notices or questions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <a href="#contact"
+                    class="bg-primary text-white px-8 py-3 rounded-button font-semibold inline-block hover:bg-opacity-90 transition-all whitespace-nowrap">Get
+                    Started Today</a>
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="10000">0</div>
+                    <p class="text-gray-200">Happy Clients</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="15000">0</div>
+                    <p class="text-gray-200">Tax Returns Filed</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="500">0</div>
+                    <p class="text-gray-200">Business Registrations</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="50">0</div>
+                    <p class="text-gray-200">Expert CAs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="10000">0</div>
+                    <p class="text-gray-200">Happy Clients</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="15000">0</div>
+                    <p class="text-gray-200">Tax Returns Filed</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="500">0</div>
+                    <p class="text-gray-200">Business Registrations</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2 counter-value" data-target="50">0</div>
+                    <p class="text-gray-200">Expert CAs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Simplify Your Tax Journey?</h2>
+                <p class="text-xl text-gray-200 mb-8">Join thousands of satisfied clients who trust us with their tax
+                    and compliance needs.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact"
+                        class="bg-white text-primary px-8 py-3 rounded-button font-semibold text-center hover:bg-opacity-90 transition-all whitespace-nowrap">Get
+                        Started</a>
+                    <a href="#"
+                        class="border-2 border-white text-white px-8 py-3 rounded-button font-semibold text-center hover:bg-white hover:text-primary transition-all whitespace-nowrap">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to get started? Reach out to us and
+                    our team will get back to you promptly.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Office Address</h4>
+                                    <p class="text-gray-600">103, Vinodam Residency, Road no 2, ALIND Employees Colony,
+                                        Sudarshan Nagar, Serlingampally, Hyderabad - 500019</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Phone Number</h4>
+                                    <p class="text-gray-600">+91 9936093609</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email Address</h4>
+                                    <p class="text-gray-600">connect@growthlinktaxfilings.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-time-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-instagram-fill"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden h-64 relative">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d951.4435185851427!2d78.33025826948308!3d17.470524278206547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDI4JzEzLjkiTiA3OMKwMTknNTEuMyJF!5e0!3m2!1sen!2sin!4v1750664988631!5m2!1sen!2sin"
+                            class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                        <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                        <form id="contact-form" action="https://readdy.ai/api/form/d1cghnert4h97ru0k630" method="POST"
+                            enctype="application/x-www-form-urlencoded">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                        placeholder="Enter your name" required maxlength="500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                        placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                    placeholder="Enter your phone number">
+                            </div>
+                            <div class="mb-6">
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested
+                                    In</label>
+                                <div class="relative">
+                                    <select id="service" name="service"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:outline-none pr-8">
+                                        <option value="">Select a service</option>
+                                        <option value="itr">Income Tax Returns</option>
+                                        <option value="gst">GST Services</option>
+                                        <option value="company">Company Registration</option>
+                                        <option value="cfo">CFO Advisory</option>
+                                        <option value="nri">NRI Taxation</option>
+                                        <option value="planning">Tax Planning</option>
+                                    </select>
+                                    <div
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                    placeholder="Tell us about your requirements"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                        <input type="checkbox" id="consent" name="consent"
+                                            class="absolute opacity-0 w-0 h-0">
+                                        <div
+                                            class="bg-gray-300 rounded-full h-6 w-10 cursor-pointer transition-colors duration-200 ease-in">
+                                        </div>
+                                        <div
+                                            class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 ease-in transform">
+                                        </div>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">I agree to receive communications about services
+                                        and promotions.</span>
+                                </label>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Submit
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919936093609"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors chatbot-toggle">
+        <i class="ri-whatsapp-line ri-2x"></i>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                            alt="GrowthLink Tax Filings" class="h-12 brightness-200">
+                    </a>
+                    <p class="text-gray-400 mb-6">India's leading digital tax advisory firm providing comprehensive
+                        financial compliance services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Income Tax Returns</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Company
+                                Registrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">CFO Advisory</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">NRI Taxation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tax Planning</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog & Resources</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for tax updates and tips.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address"
+                                class="px-4 py-2 rounded-l-button w-full border-none focus:outline-none text-gray-800">
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-2 rounded-r-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-visa-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-mastercard-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-paypal-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-amazon-pay-fill ri-lg text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 TaxPro Services. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/569e262c-399a-41f2-b0d0-214c3ee94a29"
+                            data-readdy="true" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/41ba4bda-c2db-4528-9c86-312902104d0c"
+                            data-readdy="true" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/d3c4d54e-d70c-4e10-ba3a-76aab9b2ad13"
+                            data-readdy="true" class="hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-24 z-50 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-colors opacity-0 invisible">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+    <!-- Scripts -->
+    <script id="header-scroll-effect">
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.getElementById('header');
+            const navLinks = document.querySelectorAll('nav a');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="mobile-menu-toggle">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const header = document.getElementById('header');
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+                }
+            }
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                });
+            });
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!header.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+            // Close mobile menu when window is resized to desktop view
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+        });
+    </script>
+    <script id="timeline-animation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            function activateTimelineItem(index) {
+                timelineItems.forEach((item, i) => {
+                    if (i <= index) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            // For demo purposes, cycle through the timeline items
+            let currentIndex = 0;
+            activateTimelineItem(currentIndex);
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % timelineItems.length;
+                activateTimelineItem(currentIndex);
+            }, 3000);
+        });
+    </script>
+    <script id="counter-animation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const counterElements = document.querySelectorAll('.counter-value');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const targetValue = parseInt(target.getAttribute('data-target'));
+                        let count = 0;
+                        const duration = 2000; // 2 seconds
+                        const interval = 50; // Update every 50ms
+                        const steps = duration / interval;
+                        const increment = targetValue / steps;
+                        const counter = setInterval(() => {
+                            count += increment;
+                            target.textContent = Math.floor(count).toLocaleString();
+                            if (count >= targetValue) {
+                                target.textContent = targetValue.toLocaleString();
+                                clearInterval(counter);
+                            }
+                        }, interval);
+                        observer.unobserve(target);
+                    }
+                });
+            }, options);
+            counterElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <script id="back-to-top">
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script id="form-toggle-switch">
+        document.addEventListener('DOMContentLoaded', function () {
+            const consentCheckbox = document.getElementById('consent');
+            const toggleDot = document.querySelector('.toggle-dot');
+            consentCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    toggleDot.classList.add('translate-x-4');
+                    toggleDot.parentElement.classList.add('bg-secondary');
+                    toggleDot.parentElement.classList.remove('bg-gray-300');
+                } else {
+                    toggleDot.classList.remove('translate-x-4');
+                    toggleDot.parentElement.classList.remove('bg-secondary');
+                    toggleDot.parentElement.classList.add('bg-gray-300');
+                }
+            });
+        });
+    </script>
+    <script id="contact-form-validation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const feedbackDiv = document.createElement('div');
+            feedbackDiv.className = 'fixed top-4 right-4 p-4 rounded-lg shadow-lg transform transition-transform duration-300 translate-x-full';
+            document.body.appendChild(feedbackDiv);
+            function showFeedback(message, isSuccess) {
+                feedbackDiv.textContent = message;
+                feedbackDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg transform transition-transform duration-300 ${isSuccess ? 'bg-green-500' : 'bg-red-500'} text-white`;
+                feedbackDiv.style.transform = 'translateX(0)';
+                setTimeout(() => {
+                    feedbackDiv.style.transform = 'translateX(100%)';
+                }, 3000);
+            }
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const message = formData.get('message');
+                const service = formData.get('service');
+                const consent = formData.get('consent');
+                if (!name || !email || !phone || !message || !service) {
+                    showFeedback('Please fill in all required fields.', false);
+                    return;
+                }
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    showFeedback('Please enter a valid email address.', false);
+                    return;
+                }
+                const phonePattern = /^\d{10}$/;
+                if (!phonePattern.test(phone.replace(/[^0-9]/g, ''))) {
+                    showFeedback('Please enter a valid 10-digit phone number.', false);
+                    return;
+                }
+                if (message.length > 500) {
+                    showFeedback('Message must not exceed 500 characters.', false);
+                    return;
+                }
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Submitting...';
+                const formDataToSubmit = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    message: message,
+                    service: service,
+                    consent: consent ? 'yes' : 'no'
+                };
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(formDataToSubmit).toString()
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        showFeedback('Thank you for your message! We will get back to you shortly.', true);
+                        contactForm.reset();
+                        const toggleDot = document.querySelector('.toggle-dot');
+                        toggleDot.classList.remove('translate-x-4');
+                        toggleDot.parentElement.classList.remove('bg-secondary');
+                        toggleDot.parentElement.classList.add('bg-gray-300');
+                    })
+                    .catch(error => {
+                        showFeedback('There was a problem submitting your form. Please try again.', false);
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = 'Submit Message';
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Services - TaxPro</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0a2463', secondary: '#44aa99' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=Professional%2520tax%2520filing%2520service%2520with%2520blue%2520and%2520mint%2520green%2520color%2520scheme%252C%2520Indian%2520business%2520professionals%2520reviewing%2520tax%2520documents%252C%2520modern%2520clean%2520office%2520environment%252C%2520digital%2520tax%2520forms%2520and%2520financial%2520charts%2520visible%252C%2520soft%2520natural%2520lighting%252C%2520professional%2520atmosphere&width=1920&height=600&seq=hero-bg-service&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(10, 36, 99, 0.9) 0%, rgba(10, 36, 99, 0.8) 50%, rgba(10, 36, 99, 0.7) 100%);
+        }
+
+        .floating-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .floating-icon:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .floating-icon:nth-child(4) {
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+
+        .pricing-card.recommended {
+            border-color: #44aa99;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.recommended:hover {
+            transform: scale(1.08);
+        }
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #44aa99;
+            box-shadow: 0 0 0 3px rgba(68, 170, 153, 0.2);
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            margin: 0 0.5rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="bg-white bg-opacity-95 shadow-sm">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center justify-between">
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true" class="flex items-center space-x-2">
+                        <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                            alt="GrowthLink Tax Filings" class="h-12">
+                    </a>
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                            data-readdy="true"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Home</a>
+                        <a href="#services"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Services</a>
+                        <a href="#faq"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">FAQ</a>
+                        <a href="#contact"
+                            class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Contact</a>
+                    </nav>
+                    <div class="flex items-center space-x-4">
+                        <a href="#contact"
+                            class="hidden lg:inline-block bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Free
+                            Consultation</a>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                            <i class="ri-menu-line ri-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full top-full left-0">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Home</a>
+                    <a href="#services"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Services</a>
+                    <a href="#pricing"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Pricing</a>
+                    <a href="#faq"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">FAQ</a>
+                    <a href="#contact"
+                        class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Contact</a>
+                    <a href="#contact"
+                        class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all text-center whitespace-nowrap text-lg mt-4">Free
+                        Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 pt-24">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                    data-readdy="true" class="hover:text-primary transition-colors breadcrumb-item">Home</a>
+                <span class="breadcrumb-item">Services</span>
+                <span class="breadcrumb-item text-primary font-medium">Income Tax Services</span>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero-section relative">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-2/3 text-white mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Income Tax <span
+                            class="text-secondary">Services</span></h1>
+                    <p class="text-xl mb-8 text-gray-100 max-w-2xl">Expert income tax filing solutions for individuals,
+                        professionals, and businesses with maximum deductions and complete compliance.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#pricing"
+                            class="bg-secondary text-primary px-8 py-3 rounded-button font-semibold text-center hover:bg-opacity-90 transition-all whitespace-nowrap">View
+                            Pricing</a>
+                        <a href="#contact"
+                            class="border-2 border-white text-white px-8 py-3 rounded-button font-semibold text-center hover:bg-white hover:text-primary transition-all whitespace-nowrap">Contact
+                            Us</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 relative">
+                    <div class="relative h-64">
+                        <div
+                            class="absolute top-10 left-10 w-16 h-16 bg-white bg-opacity-20 rounded-lg backdrop-blur-sm p-3 floating-icon">
+                            <i class="ri-file-list-3-line ri-2x text-white"></i>
+                        </div>
+                        <div
+                            class="absolute top-20 right-20 w-16 h-16 bg-white bg-opacity-20 rounded-lg backdrop-blur-sm p-3 floating-icon">
+                            <i class="ri-bank-card-line ri-2x text-white"></i>
+                        </div>
+                        <div
+                            class="absolute bottom-20 left-20 w-16 h-16 bg-white bg-opacity-20 rounded-lg backdrop-blur-sm p-3 floating-icon">
+                            <i class="ri-secure-payment-line ri-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Details Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Comprehensive Income Tax Solutions</h2>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">Our Income Tax Services are designed to help
+                        individuals and businesses navigate the complexities of tax filing with ease and confidence.
+                        With our team of experienced Chartered Accountants, we ensure accurate filing, maximum
+                        deductions, and complete compliance with the latest tax regulations.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-shield-check-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">100% Accuracy Guarantee</h3>
+                                <p class="text-gray-600">Our expert CAs ensure error-free filing with maximum tax
+                                    benefits and deductions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-time-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Quick Turnaround Time</h3>
+                                <p class="text-gray-600">Get your tax returns filed within 3-5 business days after
+                                    document submission.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-customer-service-2-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Year-Round Support</h3>
+                                <p class="text-gray-600">Dedicated assistance for tax notices, refund tracking, and any
+                                    tax-related queries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://readdy.ai/api/search-image?query=Professional%2520Indian%2520chartered%2520accountant%2520explaining%2520tax%2520documents%2520to%2520client%252C%2520modern%2520office%2520setting%252C%2520digital%2520tax%2520forms%2520visible%2520on%2520computer%2520screen%252C%2520professional%2520attire%252C%2520clean%2520workspace%252C%2520natural%2520lighting%252C%2520focused%2520expression&width=600&height=400&seq=service-details&orientation=landscape"
+                        alt="Income Tax Services" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Income Tax Filing Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer specialized tax filing services tailored to
+                    different categories of taxpayers.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-user-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Salaried Individuals</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive tax filing for salaried employees with Form 16, ensuring
+                        all eligible deductions under Section 80C, 80D, and more.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">ITR-1 & ITR-2 Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">HRA Exemption Calculation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Tax Saving Investment Advisory</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Form 26AS Reconciliation</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-briefcase-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Business & Professionals</h3>
+                    <p class="text-gray-600 mb-6">Specialized tax filing for self-employed individuals, freelancers, and
+                        business owners with profit optimization.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">ITR-3 & ITR-4 Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Business Income Computation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Presumptive Taxation Schemes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Expense Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-building-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Companies & Firms</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive tax filing for private limited companies, LLPs, and
+                        partnership firms with strategic tax planning.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">ITR-5, ITR-6 & ITR-7 Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Corporate Tax Planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Tax Audit Assistance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Transfer Pricing Compliance</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-stock-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Capital Gains</h3>
+                    <p class="text-gray-600 mb-6">Expert handling of tax implications from sale of property, stocks,
+                        mutual funds, and other capital assets.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">STCG & LTCG Calculation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Indexation Benefit Optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Section 54/54F Exemptions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Tax-Loss Harvesting Strategies</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-global-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">NRI Taxation</h3>
+                    <p class="text-gray-600 mb-6">Specialized tax filing services for Non-Resident Indians with
+                        investments and income in India.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">NRI ITR Filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">DTAA Benefits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">FEMA Compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">15CA/15CB Certification</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-warning-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Notice Assistance</h3>
+                    <p class="text-gray-600 mb-6">Expert support for handling income tax notices, scrutiny cases, and
+                        assessment proceedings.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Notice Resolution</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Scrutiny Representation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Demand Rectification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-gray-600">Refund Tracking</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Simple Filing Process</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We've streamlined the tax filing process to make it as easy
+                    as possible for you.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-user-add-line text-primary ri-lg"></i>
+                    </div>
+                    <div class="relative mb-4">
+                        <div class="text-3xl font-bold text-primary">01</div>
+                        <div class="absolute top-1/2 left-full w-full h-0.5 bg-gray-200 hidden md:block"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Sign Up</h3>
+                    <p class="text-gray-600">Register on our portal and select the appropriate tax filing service.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-upload-cloud-line text-primary ri-lg"></i>
+                    </div>
+                    <div class="relative mb-4">
+                        <div class="text-3xl font-bold text-primary">02</div>
+                        <div class="absolute top-1/2 left-full w-full h-0.5 bg-gray-200 hidden md:block"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Upload Documents</h3>
+                    <p class="text-gray-600">Securely upload your tax documents through our encrypted portal.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-file-search-line text-primary ri-lg"></i>
+                    </div>
+                    <div class="relative mb-4">
+                        <div class="text-3xl font-bold text-primary">03</div>
+                        <div class="absolute top-1/2 left-full w-full h-0.5 bg-gray-200 hidden md:block"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expert Review</h3>
+                    <p class="text-gray-600">Our CA team reviews your documents and identifies all deductions.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-file-paper-2-line text-primary ri-lg"></i>
+                    </div>
+                    <div class="relative mb-4">
+                        <div class="text-3xl font-bold text-primary">04</div>
+                        <div class="absolute top-1/2 left-full w-full h-0.5 bg-gray-200 hidden md:block"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Filing Process</h3>
+                    <p class="text-gray-600">We prepare and file your returns with the appropriate authorities.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-customer-service-2-line text-primary ri-lg"></i>
+                    </div>
+                    <div class="relative mb-4">
+                        <div class="text-3xl font-bold text-primary">05</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Ongoing Support</h3>
+                    <p class="text-gray-600">Year-round assistance for any tax notices or questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tax Savings Chart Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Maximize Your Tax Savings</h2>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">Our expert tax professionals help you identify
+                        all eligible deductions and exemptions to minimize your tax liability legally. On average, our
+                        clients save 15-30% more on taxes compared to self-filing.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-money-rupee-circle-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Section 80C Deductions</h3>
+                                <p class="text-gray-600">Maximize your ₹1.5 lakh deduction through strategic investments
+                                    and expenses.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-heart-pulse-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Health Insurance Premium</h3>
+                                <p class="text-gray-600">Claim up to ₹75,000 deduction for health insurance premiums
+                                    under Section 80D.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-home-4-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Home Loan Benefits</h3>
+                                <p class="text-gray-600">Claim interest deduction up to ₹2 lakh and principal repayment
+                                    under Section 80C.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Average Tax Savings by Income Level</h3>
+                    <div id="tax-savings-chart" class="w-full h-80"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find answers to the most common questions about our income
+                    tax filing services.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-xl font-bold">What documents do I need to provide for income tax filing?
+                            </h3>
+                            <i class="ri-add-line text-primary ri-lg faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">For salaried individuals, you'll need to provide Form 16 from your
+                                employer, Form 26AS (tax credit statement), investment proofs for tax-saving deductions
+                                (80C, 80D, etc.), home loan interest certificate (if applicable), and rent receipts (if
+                                claiming HRA). For business owners and professionals, additional documents like
+                                financial statements, bank statements, and expense receipts will be required.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-xl font-bold">How long does it take to complete my tax filing?</h3>
+                            <i class="ri-add-line text-primary ri-lg faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Once you've provided all the necessary documents, we typically
+                                complete the tax filing process within 3-5 business days. For more complex cases
+                                involving business income or capital gains, it may take 5-7 business days. We always
+                                prioritize accuracy over speed to ensure you get the maximum tax benefits and remain
+                                fully compliant.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-xl font-bold">What if I receive a tax notice after filing?</h3>
+                            <i class="ri-add-line text-primary ri-lg faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">If you receive a tax notice after filing, don't worry. Our
+                                Professional and Enterprise plans include year-round notice support. Simply forward the
+                                notice to us, and our expert team will analyze it, prepare the appropriate response, and
+                                guide you through the resolution process. For Basic plan users, notice support is
+                                available at an additional fee.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-xl font-bold">Can you help with tax planning throughout the year?</h3>
+                            <i class="ri-add-line text-primary ri-lg faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Yes, we offer year-round tax planning services to help you make
+                                informed financial decisions that optimize your tax liability. Our tax experts can
+                                provide guidance on investment strategies, expense management, and other tax-saving
+                                opportunities specific to your financial situation. This service is included in our
+                                Enterprise plan and available as an add-on for other plans.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-xl font-bold">How secure is my financial information with you?</h3>
+                            <i class="ri-add-line text-primary ri-lg faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">We take data security extremely seriously. All your financial
+                                information is protected with bank-level 256-bit encryption. Our secure portal uses SSL
+                                technology for document uploads, and we have strict internal access controls. We never
+                                share your information with third parties without your explicit consent. Our systems
+                                comply with all relevant data protection regulations.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                            <h3 class="text-xl font-bold">What if I need to file revised returns?</h3>
+                            <i class="ri-add-line text-primary ri-lg faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">If you discover additional information or errors after your return
+                                has been filed, we can help you file a revised return. For Professional and Enterprise
+                                plan users, one revised return filing is included at no extra cost. Basic plan users can
+                                avail this service for an additional fee. Revised returns can be filed within the time
+                                limit prescribed by the Income Tax Department.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our satisfied
+                    clients have to say about our income tax services.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520indian%2520male%2520face%252C%2520headshot%252C%2520business%2520attire%252C%2520neutral%2520expression%252C%2520high%2520quality%2520portrait%252C%2520mid%252030s%252C%2520corporate%2520setting&width=100&height=100&seq=testimonial1&orientation=squarish"
+                            alt="Rajesh Sharma" class="w-16 h-16 rounded-full object-cover object-top mr-4">
+                        <div>
+                            <h4 class="text-lg font-bold">Rajesh Sharma</h4>
+                            <p class="text-gray-600">IT Professional, Bangalore</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"I've been using TaxPro's income tax filing services for the past 3 years,
+                        and I'm extremely satisfied. Their team identified several deductions I had missed in previous
+                        years, saving me over ₹25,000 in taxes. The process is smooth, and their experts are always
+                        available to answer my questions."</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520indian%2520female%2520face%252C%2520headshot%252C%2520business%2520attire%252C%2520neutral%2520expression%252C%2520high%2520quality%2520portrait%252C%2520early%252040s%252C%2520corporate%2520setting&width=100&height=100&seq=testimonial2&orientation=squarish"
+                            alt="Priya Mehta" class="w-16 h-16 rounded-full object-cover object-top mr-4">
+                        <div>
+                            <h4 class="text-lg font-bold">Priya Mehta</h4>
+                            <p class="text-gray-600">Business Owner, Mumbai</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"As a small business owner, tax compliance was always a headache until I
+                        found TaxPro. Their Enterprise plan has been a game-changer for my business. They handle all my
+                        tax filings professionally and provide valuable tax planning advice throughout the year. Highly
+                        recommended for entrepreneurs!"</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=professional%2520indian%2520male%2520face%252C%2520headshot%252C%2520business%2520attire%252C%2520neutral%2520expression%252C%2520high%2520quality%2520portrait%252C%2520late%252020s%252C%2520corporate%2520setting&width=100&height=100&seq=testimonial3&orientation=squarish"
+                            alt="Vikram Desai" class="w-16 h-16 rounded-full object-cover object-top mr-4">
+                        <div>
+                            <h4 class="text-lg font-bold">Vikram Desai</h4>
+                            <p class="text-gray-600">Freelance Consultant, Delhi</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"When I started freelancing, I was worried about tax compliance. TaxPro's
+                        Professional plan was perfect for my needs. They helped me understand GST requirements, optimize
+                        my expense claims, and file my ITR correctly. Their team is responsive and knowledgeable. The
+                        peace of mind is worth every rupee!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Simplify Your Tax Filing?</h2>
+                <p class="text-xl text-gray-200 mb-8">Join thousands of satisfied clients who trust us with their income
+                    tax needs.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#pricing"
+                        class="bg-white text-primary px-8 py-3 rounded-button font-semibold text-center hover:bg-opacity-90 transition-all whitespace-nowrap">View
+                        Pricing Plans</a>
+                    <a href="#contact"
+                        class="border-2 border-white text-white px-8 py-3 rounded-button font-semibold text-center hover:bg-white hover:text-primary transition-all whitespace-nowrap">Schedule
+                        Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Services Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Related Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our other tax and financial services that might be
+                    relevant to your needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Related Service 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-bank-card-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">GST Services</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive GST compliance solutions for businesses of all sizes
+                        across India.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">GST Registration & Returns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">E-way Bills & E-invoicing</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Related Service 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-building-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Business Registrations</h3>
+                    <p class="text-gray-600 mb-4">End-to-end business registration services with ongoing compliance
+                        support.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Private Limited Company</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">LLP & Partnership Firm</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <!-- Related Service 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-line-chart-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">CFO Advisory</h3>
+                    <p class="text-gray-600 mb-4">Strategic financial guidance and planning for growing businesses and
+                        startups.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Financial Planning & Analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-secondary mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-600">Cash Flow Management</span>
+                        </li>
+                    </ul>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true"
+                        class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to get started? Reach out to us and
+                    our team will get back to you promptly.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Office Address</h4>
+                                    <p class="text-gray-600">103, Vinodam Residency, Road no 2, ALIND Employees Colony,
+                                        Sudarshan Nagar, Serlingampally, Hyderabad - 500019</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Phone Number</h4>
+                                    <p class="text-gray-600">+91 9936093609</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email Address</h4>
+                                    <p class="text-gray-600">connect@taxpro.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-time-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-instagram-fill"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+                        <h3 class="text-2xl font-bold mb-6">Schedule a Consultation</h3>
+                        <form id="contact-form" action="#" method="POST">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                        placeholder="Enter your name" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                        placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                    placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested
+                                    In</label>
+                                <div class="relative">
+                                    <select id="service" name="service"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:outline-none pr-8">
+                                        <option value="">Select a service</option>
+                                        <option value="basic" selected>Income Tax - Basic Plan</option>
+                                        <option value="professional">Income Tax - Professional Plan</option>
+                                        <option value="enterprise">Income Tax - Enterprise Plan</option>
+                                        <option value="custom">Custom Tax Solution</option>
+                                    </select>
+                                    <div
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                                    placeholder="Tell us about your requirements"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                        <input type="checkbox" id="consent" name="consent"
+                                            class="absolute opacity-0 w-0 h-0">
+                                        <div
+                                            class="bg-gray-300 rounded-full h-6 w-10 cursor-pointer transition-colors duration-200 ease-in">
+                                        </div>
+                                        <div
+                                            class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 ease-in transform">
+                                        </div>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">I agree to receive communications about services
+                                        and promotions.</span>
+                                </label>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Schedule
+                                Consultation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919936093609"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+        <i class="ri-whatsapp-line ri-2x"></i>
+    </a>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-24 z-50 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-colors opacity-0 invisible">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                        data-readdy="true" class="flex items-center space-x-2 mb-6">
+                        <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/ec9140bb5ecd6a3f46524b690e5c505a.jpeg"
+                            alt="GrowthLink Tax Filings" class="h-12 brightness-200">
+                    </a>
+                    <p class="text-gray-400 mb-6">India's leading digital tax advisory firm providing comprehensive
+                        financial compliance services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Income Tax Returns</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GST Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Company
+                                Registrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">CFO Advisory</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">NRI Taxation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tax Planning</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://readdy.ai/home/9c8d9fff-6763-4f7b-9d96-75bf08aee793/5b285bc7-7e24-4a32-ae97-f891a2246ac1"
+                                data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                        </li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+                        </li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for tax updates and tips.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address"
+                                class="px-4 py-2 rounded-l-button w-full border-none focus:outline-none text-gray-800">
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-2 rounded-r-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-visa-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-mastercard-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-paypal-fill ri-lg text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10">
+                            <i class="ri-amazon-pay-fill ri-lg text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 TaxPro Services. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script id="header-scroll-effect">
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.getElementById('header');
+            const navLinks = document.querySelectorAll('nav a');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const headerHeight = header.offsetHeight;
+                            const targetPosition = targetElement.offsetTop - headerHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="mobile-menu-toggle">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const header = document.getElementById('header');
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+                }
+            }
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                });
+            });
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!header.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+            // Close mobile menu when window is resized to desktop view
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                }
+            });
+        });
+    </script>
+    <script id="faq-accordion">
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    // Close all FAQs
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-icon').className = 'ri-add-line text-primary ri-lg faq-icon';
+                    });
+                    // If the clicked FAQ wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        icon.className = 'ri-subtract-line text-primary ri-lg faq-icon';
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="tax-savings-chart">
+        document.addEventListener('DOMContentLoaded', function () {
+            const chartDom = document.getElementById('tax-savings-chart');
+            const myChart = echarts.init(chartDom);
+            const option = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    borderColor: '#eee',
+                    borderWidth: 1,
+                    textStyle: {
+                        color: '#1f2937'
+                    },
+                    formatter: function (params) {
+                        return `<div style="font-weight: bold; margin-bottom: 5px;">Income: ₹${params[0].name} Lakhs</div>
+<div>Self-Filing: ₹${params[0].value.toLocaleString()} <br>
+With TaxPro: ₹${params[1].value.toLocaleString()} <br>
+<b>Savings: ₹${(params[0].value - params[1].value).toLocaleString()}</b></div>`;
+                    }
+                },
+                legend: {
+                    data: ['Self-Filing', 'With TaxPro'],
+                    bottom: 0,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '15%',
+                    top: '10%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['5', '10', '15', '20', '25'],
+                    axisLabel: {
+                        formatter: '{value} Lakhs',
+                        color: '#1f2937'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#ddd'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Tax Amount (₹)',
+                    nameTextStyle: {
+                        color: '#1f2937'
+                    },
+                    axisLabel: {
+                        formatter: '{value}',
+                        color: '#1f2937'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#ddd'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#eee'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Self-Filing',
+                        type: 'bar',
+                        data: [12500, 78000, 195000, 351000, 546000],
+                        itemStyle: {
+                            color: 'rgba(87, 181, 231, 1)'
+                        },
+                        barWidth: '25%',
+                        barGap: '30%',
+                        barCategoryGap: '20%',
+                        emphasis: {
+                            itemStyle: {
+                                color: 'rgba(87, 181, 231, 0.8)'
+                            }
+                        }
+                    },
+                    {
+                        name: 'With TaxPro',
+                        type: 'bar',
+                        data: [9000, 62000, 156000, 280000, 437000],
+                        itemStyle: {
+                            color: 'rgba(141, 211, 199, 1)'
+                        },
+                        barWidth: '25%',
+                        emphasis: {
+                            itemStyle: {
+                                color: 'rgba(141, 211, 199, 0.8)'
+                            }
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            window.addEventListener('resize', function () {
+                myChart.resize();
+            });
+        });
+    </script>
+    <script id="back-to-top">
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script id="form-toggle-switch">
+        document.addEventListener('DOMContentLoaded', function () {
+            const consentCheckbox = document.getElementById('consent');
+            const toggleDot = document.querySelector('.toggle-dot');
+            consentCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    toggleDot.classList.add('translate-x-4');
+                    toggleDot.parentElement.classList.add('bg-secondary');
+                    toggleDot.parentElement.classList.remove('bg-gray-300');
+                } else {
+                    toggleDot.classList.remove('translate-x-4');
+                    toggleDot.parentElement.classList.remove('bg-secondary');
+                    toggleDot.parentElement.classList.add('bg-gray-300');
+                }
+            });
+        });
+    </script>
+    <script id="contact-form-validation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Simple form validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                if (!name || !email || !phone) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                // Email validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                // Phone validation (simple)
+                const phonePattern = /^\d{10}$/;
+                if (!phonePattern.test(phone.replace(/[^0-9]/g, ''))) {
+                    alert('Please enter a valid 10-digit phone number.');
+                    return;
+                }
+                // Form submission simulation
+                alert('Thank you for your inquiry! Our team will contact you shortly.');
+                contactForm.reset();
+                // Reset toggle switch
+                const toggleDot = document.querySelector('.toggle-dot');
+                toggleDot.classList.remove('translate-x-4');
+                toggleDot.parentElement.classList.remove('bg-secondary');
+                toggleDot.parentElement.classList.add('bg-gray-300');
+            });
+        });
+    </script>
+</body>
+
+</html>
