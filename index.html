@@ -269,7 +269,7 @@
     </div>
     </div>
     <!-- About Us Section -->
-    <section class="py-20 bg-white">
+    <section id="about-us" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -807,29 +807,7 @@
             </div>
         </div>
     </section>
-    <!-- Stats Section -->
-    <section class="py-16 bg-primary text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-bold mb-2 counter-value" data-target="10000">0</div>
-                    <p class="text-gray-200">Happy Clients</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2 counter-value" data-target="15000">0</div>
-                    <p class="text-gray-200">Tax Returns Filed</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2 counter-value" data-target="500">0</div>
-                    <p class="text-gray-200">Business Registrations</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2 counter-value" data-target="50">0</div>
-                    <p class="text-gray-200">Expert CAs</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <!-- Testimonials Section -->
     <section class="py-20 bg-primary">
         <div class="container mx-auto px-4">
@@ -899,7 +877,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold mb-1">Working Hours</h4>
-                                    <p class="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                    <p class="text-gray-600">Monday - Saturday: 9:00 AM - 6:00 PM</p>
                                 </div>
                             </div>
                         </div>
@@ -1010,9 +988,12 @@
         </div>
     </section>
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/919936093609"
-        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors chatbot-toggle">
+     <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-23f8c9da-75df-4b8c-8747-984f8d43f067" data-elfsight-app-lazy></div>
+    <a href="https://wa.me/919936093609" class="fixed bottom-6 right-6 z-50  text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors chatbot-toggle">
         <i class="ri-whatsapp-line ri-2x"></i>
+       
     </a>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
@@ -1056,12 +1037,12 @@
                 <div>
                     <h4 class="text-lg font-bold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#about-us" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="./quick-links/our-team/index.html" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog & Resources</a>
                         </li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                        
+                        <li><a href="./quick-links/faqs/index.html" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
@@ -1279,14 +1260,18 @@
             const feedbackDiv = document.createElement('div');
             feedbackDiv.className = 'fixed top-4 right-4 p-4 rounded-lg shadow-lg transform transition-transform duration-300 translate-x-full';
             document.body.appendChild(feedbackDiv);
-            function showFeedback(message, isSuccess) {
-                feedbackDiv.textContent = message;
-                feedbackDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg transform transition-transform duration-300 ${isSuccess ? 'bg-green-500' : 'bg-red-500'} text-white`;
-                feedbackDiv.style.transform = 'translateX(0)';
-                setTimeout(() => {
-                    feedbackDiv.style.transform = 'translateX(100%)';
-                }, 3000);
-            }
+           function showFeedback(message, isSuccess) {
+    feedbackDiv.textContent = message;
+    feedbackDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 text-white transition-opacity duration-300 ${isSuccess ? 'bg-green-500' : 'bg-red-500'}`;
+    feedbackDiv.style.opacity = '1';
+    feedbackDiv.style.pointerEvents = 'auto';
+
+    setTimeout(() => {
+        feedbackDiv.style.opacity = '0';
+        feedbackDiv.style.pointerEvents = 'none';
+    }, 3000);
+}
+
             contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const formData = new FormData(contactForm);
