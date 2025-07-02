@@ -22,6 +22,10 @@
 
         gtag('config', 'AW-17039808352');
     </script>
+    <!-- Event snippet for Submit lead form conversion page -->
+    <script>
+        gtag('event', 'conversion', { 'send_to': 'AW-17039808352/nmxLCPro7ecaEOCum70_' });
+    </script>
 
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config = { theme: { extend: { colors: { primary: '#0a2463', secondary: '#44aa99' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
@@ -60,7 +64,18 @@
             background-image: url('./assets/home-head-img.jpg');
             background-size: cover;
             background-position: center;
+            position: relative;
+            /* Ensure floating icons are scoped here */
+            z-index: 10;
+            /* Lower than header */
         }
+        header#header {
+    position: fixed;
+    z-index: 100; /* Make it higher */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 
         .hero-overlay {
             background: linear-gradient(90deg, rgba(10, 36, 99, 0.9) 0%, rgba(10, 36, 99, 0.8) 50%, rgba(10, 36, 99, 0.5) 100%);
@@ -68,6 +83,8 @@
 
         .floating-icon {
             animation: float 6s ease-in-out infinite;
+             z-index: 10;
+  position: absolute;
         }
 
         .floating-icon:nth-child(2) {
@@ -188,11 +205,11 @@
                     <nav class="hidden lg:flex items-center space-x-8" id="desktopMenu">
                         <a href="./index.html"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Home</a>
-                        <a href="./services-page.html"
+                        <a href="./main-page/service-page/index.html"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Services</a>
-                        <a href="./process-page.html"
+                        <a href="./main-page/process-page/index.html"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Process</a>
-                        <a href="#contact"
+                        <a href="./main-page/contact-page/index.html"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Contact</a>
                     </nav>
 
@@ -212,11 +229,11 @@
         <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full top-full left-0">
             <div class="container mx-auto px-4 py-4">
                 <div class="flex flex-col space-y-4">
-                    <a href="./index.html"
+                    <a href="#home"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Home</a>
-                    <a href="./services-page.html"
+                    <a href="./main-page/service-page/index.html"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Services</a>
-                    <a href="./process-page.html"
+                    <a href="./main-page/process-page/index.html"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Process</a>
                     <a href="#contact"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Contact</a>
@@ -1128,21 +1145,25 @@
                     header.classList.remove('shadow-md');
                 }
             });
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerHeight = header.offsetHeight;
-                        const targetPosition = targetElement.offsetTop - headerHeight;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+           navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
-            });
+            }
+        }
+        // if it's a normal HTML link like ./services-page.html, allow default behavior
+    });
+});
+
         });
     </script>
     <script id="mobile-menu-toggle">
