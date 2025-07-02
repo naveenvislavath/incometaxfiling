@@ -4,22 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Growthlink is your go-to destination for expert tax filing, GST services, and strategic business registration support across India.">
+    <meta name="description"
+        content="Growthlink is your go-to destination for expert tax filing, GST services, and strategic business registration support across India.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>Growthlink Tax Experts | ITR & GST Filing Services</title>
+    <title>Growthlink Tax Experts | ITR & GST Filing Services</title>
 
 
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17039808352">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17039808352">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'AW-17039808352');
-</script>
+        gtag('config', 'AW-17039808352');
+    </script>
 
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config = { theme: { extend: { colors: { primary: '#0a2463', secondary: '#44aa99' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
@@ -180,19 +182,20 @@
             <div class="container mx-auto px-4 py-3">
                 <div class="flex items-center justify-between">
                     <a href="./index.html" class="flex items-center space-x-2">
-                        <img src="./assets/header logo 150x80.png"
-                            alt="GrowthLink Tax Filings" class="h-16 w-auto">
+                        <img src="./assets/header logo 150x80.png" alt="GrowthLink Tax Filings" class="h-16 w-auto">
                     </a>
-                    <nav class="hidden lg:flex items-center space-x-8">
-                         <a href="#main"
+                    <!-- Desktop Menu -->
+                    <nav class="hidden lg:flex items-center space-x-8" id="desktopMenu">
+                        <a href="./index.html"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Home</a>
-                        <a href="#services"
+                        <a href="./services-page.html"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Services</a>
-                        <a href="#process"
+                        <a href="./process-page.html"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Process</a>
                         <a href="#contact"
                             class="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer">Contact</a>
                     </nav>
+
                     <div class="flex items-center space-x-4">
                         <a href="#contact" data-readdy="true"
                             class="hidden lg:inline-block bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Free
@@ -209,11 +212,11 @@
         <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full top-full left-0">
             <div class="container mx-auto px-4 py-4">
                 <div class="flex flex-col space-y-4">
-                    <a href="#main"
+                    <a href="./index.html"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Home</a>
-                    <a href="#services"
+                    <a href="./services-page.html"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Services</a>
-                    <a href="#process"
+                    <a href="./process-page.html"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Process</a>
                     <a href="#contact"
                         class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 text-lg">Contact</a>
@@ -225,7 +228,7 @@
         </div>
     </header>
     <!-- Hero Section -->
-    <section id="main" class="hero-section relative min-h-screen flex items-center">
+    <section id="home" class="hero-section relative min-h-screen flex items-center">
         <div class="hero-overlay absolute inset-0"></div>
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
@@ -275,7 +278,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <!-- Breadcrumb -->
@@ -321,8 +324,7 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <img src="./assets/head-img-02.jpg"
-                        alt="About Us" class="rounded-lg shadow-lg w-full">
+                    <img src="./assets/head-img-02.jpg" alt="About Us" class="rounded-lg shadow-lg w-full">
                     <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
                         <div class="flex items-center space-x-4">
                             <div class="text-4xl font-bold text-primary">500+</div>
@@ -364,8 +366,7 @@
                             <span class="text-sm text-gray-600">Capital Gains Computation</span>
                         </li>
                     </ul>
-                    <a href="./services/incometax-service/index.html"
-                        data-readdy="true"
+                    <a href="./services/incometax-service/index.html" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -393,8 +394,7 @@
                             <span class="text-sm text-gray-600">GST Reconciliation & Audit</span>
                         </li>
                     </ul>
-                    <a href="./services/gst-service/index.html"
-                        data-readdy="true"
+                    <a href="./services/gst-service/index.html" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -423,11 +423,10 @@
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line text-secondary mt-1 mr-2"></i>
-                            <span class="text-sm text-gray-600">Startup India  Registration</span>
+                            <span class="text-sm text-gray-600">Startup India Registration</span>
                         </li>
                     </ul>
-                    <a href="./services/business-registration/index.html"
-                        data-readdy="true"
+                    <a href="./services/business-registration/index.html" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -455,8 +454,7 @@
                             <span class="text-sm text-gray-600">Fundraising Support</span>
                         </li>
                     </ul>
-                    <a href="./services/cfo-advisory/index.html"
-                        data-readdy="true"
+                    <a href="./services/cfo-advisory/index.html" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -484,8 +482,7 @@
                             <span class="text-sm text-gray-600">Legal Documentation</span>
                         </li>
                     </ul>
-                    <a href="./services/compliance/index.html"
-                        data-readdy="true"
+                    <a href="./services/compliance/index.html" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -513,8 +510,7 @@
                             <span class="text-sm text-gray-600">Labour License</span>
                         </li>
                     </ul>
-                    <a href="./services/licenses/index.html"
-                        data-readdy="true"
+                    <a href="./services/licenses/index.html" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -542,8 +538,7 @@
                             <span class="text-sm text-gray-600">15CA/CB Certification</span>
                         </li>
                     </ul>
-                    <a href="#"
-                        data-readdy="true"
+                    <a href="#" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -571,14 +566,13 @@
                             <span class="text-sm text-gray-600">Retirement Planning</span>
                         </li>
                     </ul>
-                    <a href="#"
-                        data-readdy="true"
+                    <a href="#" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
                     </a>
                 </div>
-                
+
                 <!-- Service Card 9 -->
                 <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
                     <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
@@ -601,8 +595,7 @@
                             <span class="text-sm text-gray-600">Statutory Reports</span>
                         </li>
                     </ul>
-                    <a href="#"
-                        data-readdy="true"
+                    <a href="#" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -629,8 +622,7 @@
                             <span class="text-sm text-gray-600">MIS Reports</span>
                         </li>
                     </ul>
-                    <a href="#"
-                        data-readdy="true"
+                    <a href="#" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -661,8 +653,7 @@
                             <span class="text-sm text-gray-600">Personal Loans</span>
                         </li>
                     </ul>
-                    <a href="#"
-                        data-readdy="true"
+                    <a href="#" data-readdy="true"
                         class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -825,7 +816,7 @@
             </div>
         </div>
     </section>
-   
+
     <!-- Testimonials Section -->
     <section class="py-20 bg-primary">
         <div class="container mx-auto px-4">
@@ -1006,12 +997,13 @@
         </div>
     </section>
     <!-- WhatsApp Button -->
-     <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-2db83c54-112b-4a26-8446-aceefeca165d" data-elfsight-app-lazy></div>
-    <a href="https://wa.me/919936093609" class="fixed bottom-6 right-6 z-50  text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors chatbot-toggle">
+    <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-2db83c54-112b-4a26-8446-aceefeca165d" data-elfsight-app-lazy></div>
+    <a href="https://wa.me/919936093609"
+        class="fixed bottom-6 right-6 z-50  text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors chatbot-toggle">
         <i class="ri-whatsapp-line ri-2x"></i>
-       
+
     </a>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
@@ -1019,22 +1011,25 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
                     <a href="./index.html" class="flex items-center space-x-2 mb-6">
-                        <img src="./assets/footer-iogo-150x80.png"
-                            alt="GrowthLink Tax Filings" class="h-16 w-auto brightness-200">
+                        <img src="./assets/footer-iogo-150x80.png" alt="GrowthLink Tax Filings"
+                            class="h-16 w-auto brightness-200">
                     </a>
                     <p class="text-gray-400 mb-6">India's leading digital tax advisory firm providing comprehensive
                         financial compliance services.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/share/1FYVUXbvx6/?mibextid=wwXIfr" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="https://www.facebook.com/share/1FYVUXbvx6/?mibextid=wwXIfr"
+                            class="text-gray-400 hover:text-white transition-colors">
                             <i class="ri-facebook-fill"></i>
                         </a>
                         <a href="https://x.com/GLTaxFilings" class="text-gray-400 hover:text-white transition-colors">
                             <i class="ri-twitter-fill"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/growthlinktaxfilings/" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="https://www.linkedin.com/company/growthlinktaxfilings/"
+                            class="text-gray-400 hover:text-white transition-colors">
                             <i class="ri-linkedin-fill"></i>
                         </a>
-                        <a href="https://www.instagram.com/growthlinktaxfilings?igsh=MW05ZjVxNDN0OWN5ZA%3D%3D&utm_source=qr" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="https://www.instagram.com/growthlinktaxfilings?igsh=MW05ZjVxNDN0OWN5ZA%3D%3D&utm_source=qr"
+                            class="text-gray-400 hover:text-white transition-colors">
                             <i class="ri-instagram-fill"></i>
                         </a>
                     </div>
@@ -1042,26 +1037,36 @@
                 <div>
                     <h4 class="text-lg font-bold mb-6">Our Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="./services/incometax-service/index.html" class="text-gray-400 hover:text-white transition-colors">Income Tax Returns</a>
+                        <li><a href="./services/incometax-service/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">Income Tax Returns</a>
                         </li>
-                        <li><a href="./services/gst-service/index.html" class="text-gray-400 hover:text-white transition-colors">GST Services</a></li>
-                        <li><a href="./services/business-registration/index.html" class="text-gray-400 hover:text-white transition-colors">Business
+                        <li><a href="./services/gst-service/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">GST Services</a></li>
+                        <li><a href="./services/business-registration/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">Business
                                 Registrations</a></li>
-                        <li><a href="./services/cfo-advisory/index.html" class="text-gray-400 hover:text-white transition-colors">CFO Advisory</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">NRI Taxation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tax Planning</a></li>
+                        <li><a href="./services/cfo-advisory/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">CFO Advisory</a></li>
+                        <li><a href="./services/compliance/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">Compliances</a></li>
+                        <li><a href="./services/licenses/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">Licences</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="#about-us" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="./quick-links/our-team/index.html" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#about-us" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="./quick-links/our-team/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog & Resources</a>
                         </li>
-                        
-                        <li><a href="./quick-links/faqs/index.html" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+
+                        <li><a href="./quick-links/faqs/index.html"
+                                class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -1095,12 +1100,12 @@
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p>&copy; 2025 TaxPro Services. All rights reserved.</p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="./privacy-policy/index.html"
-                            data-readdy="true" class="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="./terms-condition/index.html"
-                            data-readdy="true" class="hover:text-white transition-colors">Terms of Service</a>
-                        <a href="./cookie-policy/index.html"
-                            data-readdy="true" class="hover:text-white transition-colors">Cookie Policy</a>
+                        <a href="./privacy-policy/index.html" data-readdy="true"
+                            class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="./terms-condition/index.html" data-readdy="true"
+                            class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="./cookie-policy/index.html" data-readdy="true"
+                            class="hover:text-white transition-colors">Cookie Policy</a>
                     </div>
                 </div>
             </div>
@@ -1278,17 +1283,17 @@
             const feedbackDiv = document.createElement('div');
             feedbackDiv.className = 'fixed top-4 right-4 p-4 rounded-lg shadow-lg transform transition-transform duration-300 translate-x-full';
             document.body.appendChild(feedbackDiv);
-           function showFeedback(message, isSuccess) {
-    feedbackDiv.textContent = message;
-    feedbackDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 text-white transition-opacity duration-300 ${isSuccess ? 'bg-green-500' : 'bg-red-500'}`;
-    feedbackDiv.style.opacity = '1';
-    feedbackDiv.style.pointerEvents = 'auto';
+            function showFeedback(message, isSuccess) {
+                feedbackDiv.textContent = message;
+                feedbackDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 text-white transition-opacity duration-300 ${isSuccess ? 'bg-green-500' : 'bg-red-500'}`;
+                feedbackDiv.style.opacity = '1';
+                feedbackDiv.style.pointerEvents = 'auto';
 
-    setTimeout(() => {
-        feedbackDiv.style.opacity = '0';
-        feedbackDiv.style.pointerEvents = 'none';
-    }, 3000);
-}
+                setTimeout(() => {
+                    feedbackDiv.style.opacity = '0';
+                    feedbackDiv.style.pointerEvents = 'none';
+                }, 3000);
+            }
 
             contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
