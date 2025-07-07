@@ -61,7 +61,7 @@
         }
 
         .hero-section {
-            background-image: url('./assets/home-head-img.jpg');
+            background-image: url('./assets/home-header-img2.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -78,7 +78,7 @@
 }
 
         .hero-overlay {
-            background: linear-gradient(90deg, rgba(10, 36, 99, 0.9) 0%, rgba(10, 36, 99, 0.8) 50%, rgba(10, 36, 99, 0.5) 100%);
+            background: linear-gradient(90deg, rgba(92, 113, 160, 0.9) 0%, rgba(10, 36, 99, 0.8) 50%, rgba(10, 36, 99, 0.5) 100%);
         }
 
         .floating-icon {
@@ -250,9 +250,9 @@
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="w-full md:w-1/2 text-white mb-12 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">India's Digital <span
+                    <h1 class="text-4xl md:text-3xl lg:text-5xl font-bold mb-6 leading-tight">India's Digital <span
                             class="text-secondary">Tax Partner</span></h1>
-                    <p class="text-xl mb-8 text-gray-100 max-w-lg">Simplifying taxes for individuals and businesses with
+                    <p class="text-lg mb-8 text-gray-100 max-w-lg">Simplifying taxes for individuals and businesses with
                         expert CA services and cutting-edge technology.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#contact"
@@ -1013,6 +1013,13 @@
             </div>
         </div>
     </section>
+<!-- Thank You Message -->
+<div id="success-alert" class="fixed inset-0 z-50 hidden bg-black/50 items-center justify-center">
+  <div class="bg-green-100 text-green-800 px-6 py-4 rounded-lg shadow-lg text-center max-w-md w-full mx-4">
+    Thank you for your message! We will contact you shortly.
+  </div>
+</div>
+
     <!-- WhatsApp Button -->
     <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
@@ -1381,6 +1388,24 @@
             });
         });
     </script>
+
+    <script>
+  const form = document.querySelector('#contact-form'); // Change if your form ID is different
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form reload
+
+    const alertBox = document.getElementById('success-alert');
+    alertBox.classList.remove('hidden');
+    alertBox.classList.add('flex');
+
+    setTimeout(() => {
+      alertBox.classList.add('hidden');
+      alertBox.classList.remove('flex');
+    }, 4000);
+  });
+</script>
+
 </body>
 
 </html>
