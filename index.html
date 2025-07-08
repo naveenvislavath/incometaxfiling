@@ -69,13 +69,15 @@
             z-index: 10;
             /* Lower than header */
         }
+
         header#header {
-    position: fixed;
-    z-index: 100; /* Make it higher */
-    top: 0;
-    left: 0;
-    width: 100%;
-}
+            position: fixed;
+            z-index: 100;
+            /* Make it higher */
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
 
         .hero-overlay {
             background: linear-gradient(90deg, rgba(92, 113, 160, 0.9) 0%, rgba(10, 36, 99, 0.8) 50%, rgba(10, 36, 99, 0.5) 100%);
@@ -83,8 +85,8 @@
 
         .floating-icon {
             animation: float 6s ease-in-out infinite;
-             z-index: 10;
-  position: absolute;
+            z-index: 10;
+            position: absolute;
         }
 
         .floating-icon:nth-child(2) {
@@ -264,12 +266,12 @@
                     </div>
                     <div class="mt-12 flex items-center space-x-2">
                         <div class="flex -space-x-2">
-                            <img src="./assets/small-img1-3.jpg"
-                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
-                            <img src="./assets/small-ig-2.jpg"
-                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
-                            <img src="./assets/small-img1-3.jpg"
-                                alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                            <img src="./assets/small-img1-3.jpg" alt="User"
+                                class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                            <img src="./assets/small-ig-2.jpg" alt="User"
+                                class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+                            <img src="./assets/small-img1-3.jpg" alt="User"
+                                class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
                         </div>
                         <span class="text-sm text-gray-200">Trusted by 10,000+ clients across India</span>
                     </div>
@@ -911,19 +913,23 @@
                             <h4 class="font-bold mb-4">Connect With Us</h4>
                             <div class="flex space-x-4">
                                 <a href="https://www.facebook.com/share/1FYVUXbvx6/?mibextid=wwXIfr"
-                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Visit our Facebook page">
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                                    aria-label="Visit our Facebook page">
                                     <i class="ri-facebook-fill" aria-hidden="true"></i>
                                 </a>
                                 <a href="https://x.com/GLTaxFilings"
-                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Visit our Twitter page">
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                                    aria-label="Visit our Twitter page">
                                     <i class="ri-twitter-fill" aria-hidden="true"></i>
                                 </a>
                                 <a href="https://www.linkedin.com/company/growthlinktaxfilings/"
-                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"aria-label="Visit our LinkedIn page">
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                                    aria-label="Visit our LinkedIn page">
                                     <i class="ri-linkedin-fill" aria-hidden="true"></i>
                                 </a>
                                 <a href="https://www.instagram.com/growthlinktaxfilings?igsh=MW05ZjVxNDN0OWN5ZA%3D%3D&utm_source=qr"
-                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors" aria-label="Visit our Instagram page">
+                                    class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                                    aria-label="Visit our Instagram page">
                                     <i class="ri-instagram-fill" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -932,7 +938,8 @@
                     <div class="bg-gray-800 rounded-lg overflow-hidden h-64 relative">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d951.4435185851427!2d78.33025826948308!3d17.470524278206547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDI4JzEzLjkiTiA3OMKwMTknNTEuMyJF!5e0!3m2!1sen!2sin!4v1750664988631!5m2!1sen!2sin"
-                            title="Growthlink Tax Filings office location on Google Maps"class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+                            title="Growthlink Tax Filings office location on Google Maps" class="w-full h-full"
+                            style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
@@ -1013,12 +1020,13 @@
             </div>
         </div>
     </section>
-<!-- Thank You Message -->
-<div id="success-alert" class="fixed inset-0 z-50 hidden bg-black/50 items-center justify-center">
-  <div class="bg-green-100 text-green-800 px-6 py-4 rounded-lg shadow-lg text-center max-w-md w-full mx-4">
-    Thank you for your message! We will contact you shortly.
-  </div>
-</div>
+    <!-- Thank You Message -->
+    <div id="success-alert" class="fixed inset-0 z-50 hidden bg-black/50 items-center justify-center">
+        <div class="bg-green-100 text-green-800 px-6 py-4 rounded-lg shadow-lg text-center max-w-md w-full mx-4">
+            Thank you for your message! We will contact you shortly.
+        </div>
+    </div>
+
 
     <!-- WhatsApp Button -->
     <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
@@ -1042,18 +1050,22 @@
                         financial compliance services.</p>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/share/1FYVUXbvx6/?mibextid=wwXIfr"
-                            class="text-gray-400 hover:text-white transition-colors" aria-label="Visit our Facebook page">
+                            class="text-gray-400 hover:text-white transition-colors"
+                            aria-label="Visit our Facebook page">
                             <i class="ri-facebook-fill" aria-hidden="true"></i>
                         </a>
-                        <a href="https://x.com/GLTaxFilings" class="text-gray-400 hover:text-white transition-colors" aria-label="Visit our Twitter page">
+                        <a href="https://x.com/GLTaxFilings" class="text-gray-400 hover:text-white transition-colors"
+                            aria-label="Visit our Twitter page">
                             <i class="ri-twitter-fill" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.linkedin.com/company/growthlinktaxfilings/"
-                            class="text-gray-400 hover:text-white transition-colors" aria-label="Visit our LinkedIn page">
+                            class="text-gray-400 hover:text-white transition-colors"
+                            aria-label="Visit our LinkedIn page">
                             <i class="ri-linkedin-fill" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.instagram.com/growthlinktaxfilings?igsh=MW05ZjVxNDN0OWN5ZA%3D%3D&utm_source=qr"
-                            class="text-gray-400 hover:text-white transition-colors" aria-label="Visit our Instagram page">
+                            class="text-gray-400 hover:text-white transition-colors"
+                            aria-label="Visit our Instagram page">
                             <i class="ri-instagram-fill" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -1152,24 +1164,24 @@
                     header.classList.remove('shadow-md');
                 }
             });
-           navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId.startsWith('#')) {
-            e.preventDefault();
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerHeight = header.offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const headerHeight = header.offsetHeight;
+                            const targetPosition = targetElement.offsetTop - headerHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                    // if it's a normal HTML link like ./services-page.html, allow default behavior
                 });
-            }
-        }
-        // if it's a normal HTML link like ./services-page.html, allow default behavior
-    });
-});
+            });
 
         });
     </script>
@@ -1390,21 +1402,21 @@
     </script>
 
     <script>
-  const form = document.querySelector('#contact-form'); // Change if your form ID is different
+        const form = document.querySelector('#contact-form'); // Change if your form ID is different
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form reload
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form reload
 
-    const alertBox = document.getElementById('success-alert');
-    alertBox.classList.remove('hidden');
-    alertBox.classList.add('flex');
+            const alertBox = document.getElementById('success-alert');
+            alertBox.classList.remove('hidden');
+            alertBox.classList.add('flex');
 
-    setTimeout(() => {
-      alertBox.classList.add('hidden');
-      alertBox.classList.remove('flex');
-    }, 4000);
-  });
-</script>
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+                alertBox.classList.remove('flex');
+            }, 4000);
+        });
+    </script>
 
 </body>
 
