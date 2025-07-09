@@ -60,16 +60,7 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .hero-section {
-            background-image: url('./assets/home-header-img2.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            /* Ensure floating icons are scoped here */
-            z-index: 10;
-            /* Lower than header */
-        }
-
+        
         header#header {
             position: fixed;
             z-index: 100;
@@ -246,9 +237,25 @@
             </div>
         </div>
     </header>
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b pt-24">
+        <div class="container mx-auto px-1 py-1">
+
+            <span class="text-gray-800"></span>
+        </div>
+    </div>
+    </div>
     <!-- Hero Section -->
-    <section id="home" class="hero-section relative min-h-screen flex items-center">
-        <div class="hero-overlay absolute inset-0"></div>
+    <section id="home" class="relative min-h-screen flex items-center">
+         <!-- Hero image replacing background -->
+    <img 
+        src="./assets/home-header-img2.jpg" 
+        alt="India's Digital Tax Partner" 
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        fetchpriority="high"
+        decoding="async"
+    />
+        <div class="hero-overlay absolute inset-0 z-10"></div>
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="w-full md:w-1/2 text-white mb-12 md:mb-0">
@@ -1418,20 +1425,7 @@
         });
     </script>
 
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/686bf6d853c81d190bf9682a/default';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-</script>
-<!--End of Tawk.to Script-->
-
+   
 
 </body>
 
